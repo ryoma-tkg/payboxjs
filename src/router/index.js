@@ -10,6 +10,7 @@ import notice from '@/components/setting/notice'
 import security from '@/components/setting/security'
 import applicationInfo from '@/components/setting/applicationInfo'
 import help from '@/components/setting/help'
+import promoFriends from '@/components/setting/promoFriends'
 
 Vue.use(Router)
 
@@ -64,6 +65,11 @@ export default new Router({
       path: '/setting/help',
       name: 'help',
       component: help
+    },
+    {
+      path: '/setting/promoFriends',
+      name: 'promoFriends',
+      component: promoFriends
     }
   ]
 })
