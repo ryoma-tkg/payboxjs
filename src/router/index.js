@@ -7,6 +7,7 @@ import setting from '@/components/setting'
 import acountInfo from '@/components/setting/acountInfo'
 import payManager from '@/components/setting/payManager'
 import notice from '@/components/setting/notice'
+import security from '@/components/setting/security'
 
 Vue.use(Router)
 
@@ -46,6 +47,11 @@ export default new Router({
       path: '/setting/notice',
       name: 'notice',
       component: notice
+    },
+    {
+      path: '/setting/security',
+      name: 'security',
+      component: security
     }
   ]
 })
