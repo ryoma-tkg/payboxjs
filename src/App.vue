@@ -3,10 +3,11 @@
     <div id="header">
       <!--リンクタグを生成します。-->
       <router-link to="/">home</router-link>
-      <router-link to="/setting">setting</router-link>
-      <router-link to="/map">map</router-link>
+      <router-link to="/search">search</router-link>
+      <router-link to="/info">info</router-link>
+      <router-link to="/setting">settting</router-link>
     </div>
-    <!--上記のリンクタグで設定したコンポーネントが表示される場所です。-->
+    <!--コンポーネントが表示される場所です。-->
     <router-view></router-view>
   </div>
 </template>

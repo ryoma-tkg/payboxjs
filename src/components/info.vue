@@ -1,5 +1,5 @@
 <template>
-   <p>地図</p>
+   <p>お知らせ</p>
 </template>
 
 <script>
