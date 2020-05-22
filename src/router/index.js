@@ -11,6 +11,7 @@ import security from '@/components/setting/security'
 import applicationInfo from '@/components/setting/applicationInfo'
 import help from '@/components/setting/help'
 import promoFriends from '@/components/setting/promoFriends'
+import question from '@/components/setting/question'
 
 Vue.use(Router)
 
@@ -70,6 +71,11 @@ export default new Router({
       path: '/setting/promoFriends',
       name: 'promoFriends',
       component: promoFriends
+    },
+    {
+      path: '/setting/question',
+      name: 'question',
+      component: question
     }
   ]
 })
