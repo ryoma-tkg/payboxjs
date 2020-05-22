@@ -1,5 +1,5 @@
 <template>
-   <p>アカウント情報</p>
+   <p>ホーム</p>
 </template>
 
 <script>
