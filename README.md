@@ -31,4 +31,4 @@ For a detailed explanation on how things work, check out the [guide](http://vuej
 
 ## URL
 
-https://yosipy.github.io/payboxjs/#/map
+https://yosipy.github.io/payboxjs/#/
