@@ -4,7 +4,9 @@ import home from '@/components/home'
 import search from '@/components/search'
 import info from '@/components/info'
 import setting from '@/components/setting'
-// import acount_info from '@/components/setting_vue/acount_info'
+import acountInfo from '@/components/setting/acountInfo'
+import payManager from '@/components/setting/payManager'
+import notice from '@/components/setting/notice'
 
 Vue.use(Router)
 
@@ -29,6 +31,21 @@ export default new Router({
       path: '/setting',
       name: 'setting',
       component: setting
+    },
+    {
+      path: '/setting/acountInfo',
+      name: 'acountInfo',
+      component: acountInfo
+    },
+    {
+      path: '/setting/payManager',
+      name: 'payManager',
+      component: payManager
+    },
+    {
+      path: '/setting/notice',
+      name: 'notice',
+      component: notice
     }
   ]
 })

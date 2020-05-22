@@ -6,18 +6,18 @@
       <img src="プロフィール写真" alt="プロフィール写真">
       <div>"アカウント名"</div>
       <div>
-         <div id="acount_info"><button v-on:click="遷移処理">アカウント情報</button></div>
-         <div id="pay_manager"><button v-on:click="遷移処理">支払い管理</button></div>
-         <div id="notice_setting"><button v-on:click="遷移処理">通知設定</button></div>
-         <div id="security"><button v-on:click="遷移処理">セキュリティ</button></div>
+         <button type="button"><img src="" alt="アカウント情報ボタン"></button>
+         <button type="button"><img src="" alt="支払い管理ボタン"></button>
+         <button type="button"><img src="" alt="通知設定ボタン"></button>
+         <button type="button"><img src="" alt="セキュリティボタン"></button>
       </div>
       <div>
-         <div id="about_app"><button v-on:click="遷移処理">このアプリについて</button></div>
-         <div id="help"><button v-on:click="遷移処理">ヘルプ</button></div>
-         <div id="prom_friends"><button v-on:click="遷移処理">友達に紹介</button></div>
-         <div id="query"><button v-on:click="遷移処理">問い合わせ</button></div>
+         <button type="button"><img src="" alt="このアプリについてボタン"></button>
+         <button type="button"><img src="" alt="ヘルプボタン"></button>
+         <button type="button"><img src="" alt="友達に紹介ボタン"></button>
+         <button type="button"><img src="" alt="問い合わせボタン"></button>
       </div>
-         <div id="log_out"><button v-on:click="遷移処理">ログアウト</button></div>
+         <button type="button"><img src="" alt="ログアウトボタン"></button>
    </div>
 </template>
 
