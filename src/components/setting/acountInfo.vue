@@ -21,7 +21,7 @@
 
 <script>
 module.exports = {
-  paywayIcon: function () {
+  data: function () {
     return {
       settlements: [
         {text: '使用可能な決済アイコン1'},
