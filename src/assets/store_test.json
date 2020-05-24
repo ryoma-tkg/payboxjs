@@ -1,0 +1,15 @@
+{
+    "lawson": {
+        "pay": [
+            "PayPay", "LINE Pay", "メルペイ", "楽天ペイ", "d払い", "au PAY",
+            "LINE Payカード", "Kyash", "クレジットカード"
+        ],
+        "category": "QR"
+    },"linepay": {
+        "return_rate": 0.5,
+        "category": "QR"
+    },"merupay": {
+        "return_rate": 0.5,
+        "category": "QR"
+    }
+}
