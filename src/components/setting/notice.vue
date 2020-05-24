@@ -1,5 +1,5 @@
 <template>
-   <p>ホーム</p>
+   <p>通知設定</p>
 </template>
 
 <script>
