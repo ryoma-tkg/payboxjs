@@ -5,6 +5,7 @@ import home from '@/components/home'
 import search from '@/components/search'
 import info from '@/components/info'
 import setting from '@/components/setting'
+// import acount_info from '@/components/setting_vue/acount_info'
 
 Vue.use(Router)
 
