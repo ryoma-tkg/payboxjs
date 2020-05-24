@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
+import managePay from '@/components/manage_pay/manage_pay'
 import home from '@/components/home'
 import search from '@/components/search'
 import info from '@/components/info'
@@ -9,6 +10,11 @@ Vue.use(Router)
 
 export default new Router({
   routes: [
+    {
+      path: '/manage_pay',
+      name: 'managePay',
+      component: managePay
+    },
     {
       path: '/',
       name: 'home',
