@@ -56,6 +56,7 @@
     </div>
 
     <button v-on:click="register">登録</button>
+    {{position}}
   </div>
 </template>
 
@@ -72,15 +73,27 @@ export default {
       lineRank: '',
       kyash: false,
       kyash_credit: 0,
+      // value
+      position: [ 0, 0 ],
       usePayAndReturnRate: JSON.parse('{}')
     }
   },
   methods: {
+    getPosition: function () {
+      navigator.geolocation.getCurrentPosition(this.getPositionInner)
+    },
+    getPositionInner: function (position) {
+      var crd = position.coords
+      this.position[0] = crd.latitude
+      this.position[1] = crd.longitude
+      console.log(this.position[0], this.position[1])
+    },
     register: function () {
       // var myPaysHold = {}
       // 還元率計算
       if (this.paypayMoney) {
         this.usePayAndReturnRate['PayPay(現金チャージ)'] = 0.5
+        this.getPosition()
         console.log(this.usePayAndReturnRate)
       }
       // this.$localStorage.set(key,value)
