@@ -1,24 +1,33 @@
 <template>
    <div>
-      <div>
-         <p>設定</p>
+      <div class="wrap">
+         <h1>設定</h1>
       </div>
-      <img src="プロフィール写真" alt="プロフィール写真">
-      <div>"アカウント名"</div>
-      <div>
-         <router-link to="/setting/acountInfo"><button type="button"><img src="" alt="アカウント情報ボタン"></button></router-link><br>
-         <router-link to="/setting/payManager"><button type="button"><img src="" alt="支払い管理ボタン"></button></router-link><br>
-         <router-link to="/setting/notice"><button type="button"><img src="" alt="通知設定ボタン"></button></router-link><br>
-         <router-link to="/setting/security"><button type="button"><img src="" alt="セキュリティボタン"></button></router-link><br>
+
+      <div class="user_info">
+         <img src="../../static/test/47365_main.jpg" alt="プロフィール写真" id="user_image">
+         <!--仮で画像を入れています、処理を変えてください。-->
+         <p id="user_name">"アカウント名"</p>
       </div>
-      <div>
-         <router-link to="/setting/applicationInfo"><button type="button"><img src="" alt="このアプリについてボタン"></button></router-link><br>
-         <router-link to="/setting/help"><button type="button"><img src="" alt="ヘルプボタン"></button></router-link><br>
-         <router-link to="/setting/promoFriends"><button type="button"><img src="" alt="友達に紹介ボタン"></button></router-link><br>
-         <router-link to="/setting/question"><button type="button"><img src="" alt="問い合わせボタン"></button></router-link><br>
-      </div>
-         <button type="button" @click="Logout"><img src="" alt="ログアウトボタン"></button>
+
+      <ul class="setting">
+         <router-link to="/setting/acountInfo"><li id="acount_info"><button v-on:click="遷移処理">アカウント情報</button></li></router-link>
+         <router-link to="/setting/payManager"><li id="pay_manager"><button v-on:click="遷移処理">支払い管理</button></li></router-link>
+         <router-link to="/setting/notice"><li id="notice_setting"><button v-on:click="遷移処理">通知設定</button></li></router-link>
+         <router-link to="/setting/security"><li id="security"><button v-on:click="遷移処理">セキュリティ</button></li></router-link>
+      </ul>
+
+      <ul class="others">
+         <router-link to="/setting/applicationInfo"><li id="about_app"><button v-on:click="遷移処理">このアプリについて</button></li></router-link>
+         <router-link to="/setting/help"><li id="help"><button v-on:click="遷移処理">ヘルプ</button></li></router-link>
+         <router-link to="/setting/promoFriends"><li id="prom_friends"><button v-on:click="遷移処理">友達に紹介</button></li></router-link>
+         <router-link to="/setting/question"><li id="query"><button v-on:click="遷移処理">問い合わせ</button></li></router-link>
+      </ul>
+         <div id="log_out"><button @click="Logout">ログアウト</button></div>
+
+         <div class="spacing"></div>
    </div>
+
 </template>
 
 <script>
@@ -36,4 +45,106 @@ module.exports = {
 </script>
 
 <style>
+   *{
+      margin:0;
+      padding:0;
+   }
+
+   h1{
+      height:45px;
+      width: 100%;
+      background-color: #FFF;
+      text-align: center;
+      padding-top: 25px;
+      font-size: 20px;
+      color: #626262;
+
+      border-radius: 0 0 30px 30px;
+
+      margin-bottom: 30px;
+
+      position: fixed;
+      top:0px;
+
+      -webkit-box-shadow: 0px 5px 50px 0px rgba(0,0,0,0.2);
+      -moz-box-shadow: 0px 5px 50px 0px rgba(0,0,0,0.2);
+      box-shadow: 0px 5px 50px 0px rgba(0,0,0,0.2);
+   }
+
+   #user_image{
+      width:135px;
+      height: 135px;
+      object-fit: cover;
+      border-radius: 50%;
+
+      border:solid 7px #FFF;
+      -webkit-box-shadow: 0px 5px 50px 0px rgba(0,0,0,0.2);
+      -moz-box-shadow: 0px 5px 50px 0px rgba(0,0,0,0.2);
+      box-shadow: 0px 5px 50px 0px rgba(0,0,0,0.2);
+   }
+
+   #user_name{
+      margin-top:15px;
+      font-size: 20px;
+   }
+
+   /*項目*/
+
+   ul{
+      margin-top:30px;
+      margin-bottom: 60px;
+   }
+
+   li{
+      margin: 10px 0;
+      -webkit-box-shadow: 0px 5px 50px 0px rgba(0,0,0,0.15);
+      -moz-box-shadow: 0px 5px 50px 0px rgba(0,0,0,0.15);
+      box-shadow: 0px 5px 50px 0px rgba(0,0,0,0.15);
+   }
+
+   li button{
+      width: 100%;
+      font-size: 17px;
+      border:none;
+      height: 50px;
+      background-color: #FFF;
+      color: #626262;
+      text-align: center;
+
+      transition: all 0.2s ease-out;
+   }
+
+   li button:active{
+      color: #FFF;
+      background-color: #AAA;
+   }
+
+   /*ログアウト*/
+
+   #log_out button{
+      font-size: 17px;
+      color:#C40303;
+
+      width: 100%;
+      margin-bottom: 20px;
+      height: 50px;
+      background-color: #FFF;
+      text-align: center;
+
+      border:none;
+
+      -webkit-box-shadow: 0px 5px 50px 0px rgba(0,0,0,0.2);
+      -moz-box-shadow: 0px 5px 50px 0px rgba(0,0,0,0.2);
+      box-shadow: 0px 5px 50px 0px rgba(0,0,0,0.2);
+
+      transition: all 0.2s ease-out;
+   }
+   #log_out button:active{
+      background-color: #AAA;
+   }
+
+   .spacing{
+      height: 100px;
+   }
+
 </style>
