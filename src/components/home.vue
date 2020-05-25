@@ -11,18 +11,23 @@
 // import axios from 'axios'
 import _json from '../assets/pay_test.json'
 // 近くの店舗情報を取得
-/* function getNearStores () {
+function getNearStores () {
 }
 // GPS 取得
 function getPosition () {
-  return new Promise (function (resolve) {
+  return new Promise(function (resolve) {
     navigator.geolocation.getCurrentPosition(resolve)
   })
 }
-async function getRequest () {
+async function getStoreRequest (latitude, longitude) {
   try {
+    // url = 'http://160.251.15.239/api/shops?latitude=2.3&longitude=2.3'
+    var url = 'http://160.251.15.239/api/shops?latitude='
+    url += String(latitude) + '&' + String(longitude)
+    url = 'http://160.251.15.239/api/shops?latitude=61.00000&longitude=41.0000'
+    console.log('REST url: ', url)
     // (1) http://localhost:4000/comments (コメント一覧のWeb API)にGETリクエストして、コメント一覧のレスポンスを取得しましょう (Fetch APIを使います)
-    const response = await fetch('http://160.251.15.239/api/shops?latitude=2.3&longitude=2.3')
+    const response = await fetch(url)
     if (!response.ok) {
       console.error('エラーレスポンス', response)
       return
@@ -36,7 +41,7 @@ async function getRequest () {
     console.log('例外をキャッチしたよ！')
     console.error(error)
   }
-} */
+}
 export default {
   data () {
     return {
@@ -46,15 +51,19 @@ export default {
     }
   },
   created () {
-    /* getPosition ()
+    getPosition()
       .then((position) => {
-        console.log(position)
+        // GPS 取得した後の処理
+        console.log('position', position)
+        let latitude = position.coords.latitude
+        let longitude = position.coords.longitude
+        console.log(latitude, ', ', longitude)
+        getStoreRequest(latitude, longitude)
       })
       .catch((err) => {
         console.error(err.message)
       })
-    getRequest()
-    getNearStores () */
+    getNearStores()
     console.log('hoge is: home')
   },
   methods: {
