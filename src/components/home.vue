@@ -10,6 +10,33 @@
 <script>
 // import axios from 'axios'
 import _json from '../assets/pay_test.json'
+// 近くの店舗情報を取得
+/* function getNearStores () {
+}
+// GPS 取得
+function getPosition () {
+  return new Promise (function (resolve) {
+    navigator.geolocation.getCurrentPosition(resolve)
+  })
+}
+async function getRequest () {
+  try {
+    // (1) http://localhost:4000/comments (コメント一覧のWeb API)にGETリクエストして、コメント一覧のレスポンスを取得しましょう (Fetch APIを使います)
+    const response = await fetch('http://160.251.15.239/api/shops?latitude=2.3&longitude=2.3')
+    if (!response.ok) {
+      console.error('エラーレスポンス', response)
+      return
+    }
+    // (2) レスポンスのボディを取得して、変数に代入しましょう (ボディはJSON形式です)
+    const resPos = await response.json()
+    // (3) レスポンスの結果を、 console.log() で表示してみましょう
+    console.log('resPos')
+    console.log(resPos)
+  } catch (error) {
+    console.log('例外をキャッチしたよ！')
+    console.error(error)
+  }
+} */
 export default {
   data () {
     return {
@@ -17,6 +44,18 @@ export default {
       list: [],
       json: _json
     }
+  },
+  created () {
+    /* getPosition ()
+      .then((position) => {
+        console.log(position)
+      })
+      .catch((err) => {
+        console.error(err.message)
+      })
+    getRequest()
+    getNearStores () */
+    console.log('hoge is: home')
   },
   methods: {
   }
