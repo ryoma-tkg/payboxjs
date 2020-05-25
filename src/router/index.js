@@ -4,6 +4,10 @@ import managePay from '@/components/manage_pay/manage_pay'
 import home from '@/components/home'
 import search from '@/components/search'
 import info from '@/components/info'
+import campaign from '@/components/info/campaign'
+import maintenance from '@/components/info/maintenance'
+import newsystem from '@/components/info/newsystem'
+import recommend from '@/components/info/recommend'
 import setting from '@/components/setting'
 import acountInfo from '@/components/setting/acountInfo'
 import payManager from '@/components/setting/payManager'
@@ -38,6 +42,26 @@ export default new Router({
       path: '/info',
       name: 'info',
       component: info
+    },
+    {
+      path: '/info/campaign',
+      name: 'campaign',
+      component: campaign
+    },
+    {
+      path: '/info/maintenance',
+      name: 'maintenance',
+      component: maintenance
+    },
+    {
+      path: '/info/newsystem',
+      name: 'newsystem',
+      component: newsystem
+    },
+    {
+      path: '/info/recommend',
+      name: 'recommend',
+      component: recommend
     },
     {
       path: '/setting',
