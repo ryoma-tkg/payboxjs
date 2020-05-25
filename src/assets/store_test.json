@@ -1,9 +1,19 @@
 {
     "lawson": {
-        "pay": [
-            "PayPay", "LINE Pay", "メルペイ", "楽天ペイ", "d払い", "au PAY",
-            "LINE Payカード", "Kyash", "クレジットカード"
-        ],
+        "pay": {
+            "PayPay(現金チャージ)": 0.5,
+            "visa LINE Payカード": 3,
+            "LINE Pay(現金チャージ)": 0, 
+            "LINE Pay(レギュラー)": 1, 
+            "LINE Pay(シルバー)": 1.5, 
+            "LINE Pay(ゴールド)": 2, 
+            "LINE Pay(プラチナ)": 3,
+            "Kyash": 1,
+            "Kyash(クレジットカードチャージ)": 2,
+            "メルペイ": 0,
+            "楽天ペイ", "d払い", "au PAY",
+            "Kyash", "クレジットカード"
+        },
         "category": "QR"
     },"linepay": {
         "return_rate": 0.5,

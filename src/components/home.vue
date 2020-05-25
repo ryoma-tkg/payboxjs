@@ -15,7 +15,7 @@ export default {
     return {
       message: 'Hello world!',
       list: [],
-      json: JSON.parse(_json)
+      json: _json
     }
   },
   methods: {
