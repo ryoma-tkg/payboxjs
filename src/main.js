@@ -3,6 +3,7 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
+import VueLocalStorage from 'vue-localstorage'
 
 Vue.config.productionTip = false
 
@@ -12,4 +13,31 @@ new Vue({
   router,
   components: { App },
   template: '<App/>'
+})
+
+Vue.use(VueLocalStorage)
+
+new Vue({
+  localStorage: {
+    stringKey: {
+      type: String
+    },
+    numberKey: {
+      type: Number
+    },
+    booleanKey: {
+      type: Boolean,
+      default: true
+    },
+    listKey: {
+      type: Array
+    },
+    objectKey: {
+      type: Object,
+      default: {
+        val: 'default'
+      }
+    },
+    noTypeKey: ''
+  }
 })
