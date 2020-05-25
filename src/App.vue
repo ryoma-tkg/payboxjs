@@ -1,14 +1,14 @@
 <template>
   <div id="app">
-    <div id="header">
+    <!--コンポーネントが表示される場所です。-->
+    <router-view></router-view>
+    <div id="footer">
       <!--リンクタグを生成します。-->
       <router-link to="/">home</router-link>
       <router-link to="/search">search</router-link>
       <router-link to="/info">info</router-link>
       <router-link to="/setting">settting</router-link>
     </div>
-    <!--コンポーネントが表示される場所です。-->
-    <router-view></router-view>
   </div>
 </template>
 
