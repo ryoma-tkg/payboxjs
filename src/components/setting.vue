@@ -11,17 +11,17 @@
       </div>
 
       <ul class="setting">
-         <router-link to="/setting/acountInfo"><li id="acount_info"><button v-on:click="遷移処理">アカウント情報</button></li></router-link>
-         <router-link to="/setting/payManager"><li id="pay_manager"><button v-on:click="遷移処理">支払い管理</button></li></router-link>
-         <router-link to="/setting/notice"><li id="notice_setting"><button v-on:click="遷移処理">通知設定</button></li></router-link>
-         <router-link to="/setting/security"><li id="security"><button v-on:click="遷移処理">セキュリティ</button></li></router-link>
+         <router-link to="/setting/acountInfo"><li id="acount_info"><button>アカウント情報</button></li></router-link>
+         <router-link to="/setting/payManager"><li id="pay_manager"><button>支払い管理</button></li></router-link>
+         <router-link to="/setting/notice"><li id="notice_setting"><button>通知設定</button></li></router-link>
+         <router-link to="/setting/security"><li id="security"><button>セキュリティ</button></li></router-link>
       </ul>
 
       <ul class="others">
-         <router-link to="/setting/applicationInfo"><li id="about_app"><button v-on:click="遷移処理">このアプリについて</button></li></router-link>
-         <router-link to="/setting/help"><li id="help"><button v-on:click="遷移処理">ヘルプ</button></li></router-link>
-         <router-link to="/setting/promoFriends"><li id="prom_friends"><button v-on:click="遷移処理">友達に紹介</button></li></router-link>
-         <router-link to="/setting/question"><li id="query"><button v-on:click="遷移処理">問い合わせ</button></li></router-link>
+         <router-link to="/setting/applicationInfo"><li id="about_app"><button>このアプリについて</button></li></router-link>
+         <router-link to="/setting/help"><li id="help"><button>ヘルプ</button></li></router-link>
+         <router-link to="/setting/promoFriends"><li id="prom_friends"><button>友達に紹介</button></li></router-link>
+         <router-link to="/setting/question"><li id="query"><button>問い合わせ</button></li></router-link>
       </ul>
          <div id="log_out"><button @click="Logout">ログアウト</button></div>
 
