@@ -17,11 +17,22 @@
          <router-link to="/setting/promoFriends"><button type="button"><img src="" alt="友達に紹介ボタン"></button></router-link><br>
          <router-link to="/setting/question"><button type="button"><img src="" alt="問い合わせボタン"></button></router-link><br>
       </div>
-         <router-link to="/setting/logOut"><button type="button"><img src="" alt="ログアウトボタン"></button></router-link>
+         <button type="button" @click="Logout"><img src="" alt="ログアウトボタン"></button>
    </div>
 </template>
 
 <script>
+module.exports = {
+  methods: {
+    Logout: function () {
+      const result = window.confirm('ログアウトしますか？')
+      if (result) {
+        // ログアウトするコード
+        alert('ログアウトしました')
+      }
+    }
+  }
+}
 </script>
 
 <style>
