@@ -1,5 +1,5 @@
 <template>
-   <p>通知設定</p>
+  <p>通知設定</p>
 </template>
 
 <script>
