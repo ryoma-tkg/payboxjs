@@ -3,6 +3,7 @@
   <h1>店舗検索</h1>
   <div id="searching">
     <input type="text" v-model="keyword">
+    <button @click="Clear">クリア</button>
     <table>
       <tr v-for="store in filteredStores" v-bind:key="store">
         <td><p>店舗名：</p>{{ store.storeName }}</td>
@@ -53,6 +54,11 @@ export default {
         }
       }
       return stores
+    }
+  },
+  methods: {
+    Clear: function () {
+      this.keyword = ''
     }
   }
 }
