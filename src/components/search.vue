@@ -9,9 +9,19 @@
         <td><p>店舗名：</p>{{ store.storeName }}</td>
         <td><p>カテゴリ：</p>{{ store.storeCategory }}</td>
         <!-- <td><p>住所：</p>{{ store.storeAddress }}</td> -->
+        <!--
+        <div>
+          <h3>カテゴリで検索</h3>
+          <div>
+            <button @click="CategorySearch"><img src="" alt="カテゴリ.img"></button>
+            <button @click="CategorySearch"><img src="" alt="カテゴリ.img"></button>
+          </div>
+        </div>
+        -->
       </tr>
     </table>
   </div>
+
 </div>
 </template>
 
@@ -58,6 +68,9 @@ export default {
   },
   methods: {
     Clear: function () {
+      this.keyword = ''
+    },
+    CategorySearch: function () {
       this.keyword = ''
     }
   }
