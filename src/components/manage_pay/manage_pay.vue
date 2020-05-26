@@ -2,6 +2,21 @@
   <div>
     <p>支払方法登録</p>
 
+    <!-- クレジットカード -->
+    <div>
+      <input
+        id="creditcard"
+        type="checkbox"
+        v-model="creditcard"
+      >
+      <label for="creditcard">クレジットカード</label>
+      <select v-model="creditcardCredit">
+        <option disabled value="">登録クレジットカード還元率選択</option>
+        <option>0.5%</option>
+        <option>1%</option>
+      </select>
+    </div>
+
     <!-- PayPay -->
     <div>
       <input
@@ -41,13 +56,60 @@
 
     <!-- 楽天Pay -->
     <div>
+      <input
+        id="rakutenPay"
+        type="checkbox"
+        v-model="rakutenPay"
+      >
       <label for="rakutenPay">楽天Pay</label>
-      <select v-model="rakutenPay">
+      <select v-model="rakutenPayCredit">
         <option disabled value="">登録クレジットカード還元率選択</option>
         <option>ポイント利用のみ</option>
         <option>0.5%</option>
         <option>1%</option>
       </select>
+    </div>
+
+    <!-- auPay -->
+    <div>
+      <input
+        id="auPay"
+        type="checkbox"
+        v-model="auPay"
+      >
+      <label for="auPay">auPay</label>
+      <select v-model="auPayCredit">
+        <option disabled value="">登録クレジットカード還元率選択</option>
+        <option>ポイント利用のみ</option>
+        <option>0.5%</option>
+        <option>1%</option>
+      </select>
+    </div>
+
+    <!-- d払い -->
+    <div>
+      <input
+        id="dPay"
+        type="checkbox"
+        v-model="dPay"
+      >
+      <label for="dPay">d払い</label>
+      <select v-model="dPayCredit">
+        <option disabled value="">登録クレジットカード還元率選択</option>
+        <option>ポイント利用のみ</option>
+        <option>0.5%</option>
+        <option>1%</option>
+      </select>
+    </div>
+
+    <!-- メルペイ -->
+    <div>
+      <input
+        id="meruPay"
+        type="checkbox"
+        v-model="meruPay"
+      >
+      <label for="meruPay">メルペイ</label>
     </div>
 
     <!-- Kyash -->
@@ -77,13 +139,21 @@
 export default {
   data () {
     return {
+      creditcard: false,
+      creditcardCredit: '1%',
       paypayMoney: false,
       visaLinePay: false,
       linePay: false,
       lineRank: '',
-      rakutenPay: '',
+      rakutenPay: false,
+      rakutenPayCredit: '1%',
+      auPay: false,
+      auPayCredit: '1%',
+      dPay: false,
+      dPayCredit: '1%',
+      meruPay: false,
       kyash: false,
-      kyash_credit: '',
+      kyash_credit: '1%',
       // value
       usePayAndReturnRate: JSON.parse('{}')
     }
@@ -93,6 +163,18 @@ export default {
       // 初期化
       this.usePayAndReturnRate = {}
       // 還元率計算
+
+      // クレジットカード
+      if (this.creditcard) {
+        this.usePayAndReturnRate['クレジットカード'] = 0
+        if (this.creditcardCredit === '0.5%') {
+          this.usePayAndReturnRate['クレジットカード'] = 0.5
+        }
+        if (this.creditcardCredit === '1%') {
+          this.usePayAndReturnRate['クレジットカード'] = 1
+        }
+      }
+
       // PayPay 現金
       if (this.paypayMoney) {
         this.usePayAndReturnRate['PayPay(現金チャージ)'] = 0.5
@@ -102,6 +184,7 @@ export default {
         this.usePayAndReturnRate['visa LINE Payカード'] = 3
 
         if (this.linePay) {
+          this.usePayAndReturnRate['LINE Pay'] = 1
           if (this.lineRank === 'レギュラー') {
             this.usePayAndReturnRate['LINE Pay'] = 1
           }
@@ -116,17 +199,56 @@ export default {
           }
         }
       } else {
-        this.usePayAndReturnRate['LINE Pay'] = 0
+        if (this.linePay) {
+          this.usePayAndReturnRate['LINE Pay'] = 0
+        }
       }
 
       // 楽天Pay
-      if (this.rakutenPay !== '') {
-        if (this.rakutenPay === '0.5%') {
+      if (this.rakutenPay) {
+        this.usePayAndReturnRate['楽天Pay'] = 0
+        if (this.rakutenPayCredit === 'ポイント利用のみ') {
+          this.usePayAndReturnRate['楽天Pay'] = 0
+        }
+        if (this.rakutenPayCredit === '0.5%') {
           this.usePayAndReturnRate['楽天Pay'] = 0.5
         }
-        if (this.rakutenPay === '1%') {
+        if (this.rakutenPayCredit === '1%') {
           this.usePayAndReturnRate['楽天Pay'] = 1
         }
+      }
+
+      // auPay
+      if (this.auPay) {
+        this.usePayAndReturnRate['auPay'] = 0.5
+        if (this.auPayCredit === 'ポイント利用のみ') {
+          this.usePayAndReturnRate['auPay'] = 0.5
+        }
+        if (this.auPayCredit === '0.5%') {
+          this.usePayAndReturnRate['auPay'] += 0.5
+        }
+        if (this.auPayCredit === '1%') {
+          this.usePayAndReturnRate['auPay'] += 1
+        }
+      }
+
+      // d払い
+      if (this.dPay) {
+        this.usePayAndReturnRate['dPay'] = 0.5
+        if (this.dPayCredit === 'ポイント利用のみ') {
+          this.usePayAndReturnRate['dPay'] = 0.5
+        }
+        if (this.dPayCredit === '0.5%') {
+          this.usePayAndReturnRate['dPay'] += 0.5
+        }
+        if (this.dPayCredit === '1%') {
+          this.usePayAndReturnRate['dPay'] += 1
+        }
+      }
+
+      // メルペイ
+      if (this.meruPay) {
+        this.usePayAndReturnRate['meruPay'] = 0
       }
 
       // kyash
