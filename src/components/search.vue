@@ -126,9 +126,18 @@ export default {
         }
       ],
       categories: [
-        {text: '食事'},
-        {text: 'ファッション'},
-        {text: 'コンビニエンスストア'}
+        {
+          id: 1,
+          text: '食事'
+        },
+        {
+          id: 2,
+          text: 'ファッション'
+        },
+        {
+          id: 3,
+          text: 'コンビニエンスストア'
+        }
       ]
     }
   },
