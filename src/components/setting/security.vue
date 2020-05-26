@@ -1,5 +1,12 @@
 <template>
-   <p>ホーム</p>
+    <div>
+    <div class="title">
+        <!-- 戻るボタン -->
+        <router-link to="/setting"><button><img src="../../../static/test/modoru_kuro.svg" alt=""></button></router-link>
+        <h1 class="sub_con">セキュリティ</h1>
+      </div>
+      <div class="top_speas"></div>
+    </div>
 </template>
 
 <script>
