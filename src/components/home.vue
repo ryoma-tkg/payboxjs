@@ -22,8 +22,9 @@ function getPosition () {
 async function getStoreRequest (latitude, longitude) {
   try {
     // url = 'http://160.251.15.239/api/shops?latitude=2.3&longitude=2.3'
-    var url = 'http://160.251.15.239/api/shops?latitude='
-    url += String(latitude) + '&' + String(longitude)
+    let range = 0.000011
+    let url = 'http://160.251.15.239/api/shops?latitude='
+    url += String(latitude) + '&longitude=' + String(longitude) + '&range=' + String(range)
     // url = 'http://160.251.15.239/api/shops?latitude=61.00000&longitude=41.0000' // for test
     console.log('REST url: ', url)
     // (1) http://localhost:4000/comments (コメント一覧のWeb API)にGETリクエストして、コメント一覧のレスポンスを取得しましょう (Fetch APIを使います)
