@@ -5,7 +5,7 @@
       <div class="search">
         <input type="text" v-model="keyword" placeholder="何をお探しですか？">
         <!-- 検索アイコン(虫眼鏡) -->
-        <!-- <img src="../../static/test/icons/mini_mushi.svg" alt="search_icon"> -->
+        <img src="../../static/test/icons/mini_mushi.svg" alt="search_icon">
       </div>
       <button @click="Clear">クリア</button>
       <div class="wrap">
@@ -26,7 +26,7 @@
                     <h4>{{ store.storeCategory }}</h4>
                   </li>
                   <!-- 決済アイコンの表示 -->
-                  <!-- <li><img src="../../static/test/kessai/au.svg" alt="決済アイコン"></li> -->
+                  <li><img src="../../static/test/kessai/au.svg" alt="決済アイコン"></li>
                 </div>
                 <!-- <td><p>住所：</p>{{ store.storeAddress }}</td> -->
                 <!-- 上の住所表示は保留 -->
