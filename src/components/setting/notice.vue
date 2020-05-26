@@ -1,5 +1,6 @@
 <template>
   <div>
+      <h1>通知設定</h1>
     <div class="title">
       <!-- 戻るボタン -->
       <router-link to="/setting"><button><img src="../../../static/test/modoru_kuro.svg" alt=""></button></router-link>
