@@ -23,8 +23,13 @@ async function getStoreRequest (latitude, longitude) {
   try {
     // url = 'http://160.251.15.239/api/shops?latitude=2.3&longitude=2.3'
     let range = 0.011111
-    console.log(location.href)
-    let url = 'http://160.251.15.239/api/shops?latitude='
+    let url // let url = 'http://160.251.15.239/api/shops?latitude='
+    if (location.href.match(/localhost/)) {
+      url = 'http://160.251.15.239/api/shops?latitude='
+    } else {
+      url = '//160.251.15.239/api/shops?latitude='
+    }
+
     // latitude = 35.695443// for test2
     // longitude = 139.7000// for test2
     url += String(latitude) + '&longitude=' + String(longitude) + '&range=' + String(range)
