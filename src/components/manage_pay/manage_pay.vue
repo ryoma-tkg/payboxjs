@@ -120,7 +120,7 @@ export default {
       }
 
       console.log(this.usePayAndReturnRate)
-      // this.$localStorage.set(key,value)
+      this.$localStorage.set('usePayAndReturnRate', JSON.stringify(this.usePayAndReturnRate))
     }
   }
 }
