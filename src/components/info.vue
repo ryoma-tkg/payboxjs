@@ -12,30 +12,30 @@
           <li>
             <!--liが増えると項目が増えます。-->
             <a href="/" class="recommend-entry">
-              <img src="/static/test/47365_main.jpg" class="recommend-img" />
+              <img src="../../static/test/47365_main.jpg" class="recommend-img" />
               <p class="recommend-title">マツコデラックス機能追加</p>
             </a>
           <li>
             <a href="/" class="recommend-entry">
-              <img src="/static/test/47365_main.jpg" class="recommend-img" />
+              <img src="../../static/test/47365_main.jpg" class="recommend-img" />
               <p class="recommend-title">記事タイトル</p>
             </a>
           </li>
           <li>
             <a href="/" class="recommend-entry">
-              <img src="/static/test/47365_main.jpg" class="recommend-img" />
+              <img src="../../static/test/47365_main.jpg" class="recommend-img" />
               <p class="recommend-title">記事タイトル</p>
             </a>
           </li>
           <li>
             <a href="/" class="recommend-entry">
-              <img src="/static/test/47365_main.jpg" class="recommend-img" />
+              <img src="../../static/test/47365_main.jpg" class="recommend-img" />
               <p class="recommend-title">記事タイトル</p>
             </a>
           </li>
           <li>
             <a href="/" class="recommend-entry">
-              <img src="/static/test/47365_main.jpg" class="recommend-img" />
+              <img src="../../static/test/47365_main.jpg" class="recommend-img" />
               <p class="recommend-title">記事タイトル</p>
             </a>
           </li>
@@ -53,25 +53,25 @@
           </li>
           <li>
             <a href="/" class="recommend-entry">
-              <img src="/static/test/47365_main.jpg" class="recommend-img" />
+              <img src="../../static/test/47365_main.jpg" class="recommend-img" />
               <p class="recommend-title">記事タイトル</p>
             </a>
           </li>
           <li>
             <a href="/" class="recommend-entry">
-              <img src="/static/test/47365_main.jpg" class="recommend-img" />
+              <img src="../../static/test/47365_main.jpg" class="recommend-img" />
               <p class="recommend-title">記事タイトル</p>
             </a>
           </li>
           <li>
             <a href="/" class="recommend-entry">
-              <img src="/static/test/47365_main.jpg" class="recommend-img" />
+              <img src="../../static/test/47365_main.jpg" class="recommend-img" />
               <p class="recommend-title">記事タイトル</p>
             </a>
           </li>
           <li>
             <a href="/" class="recommend-entry">
-              <img src="/static/test/47365_main.jpg" class="recommend-img" />
+              <img src="../../static/test/47365_main.jpg" class="recommend-img" />
               <p class="recommend-title">記事タイトル</p>
             </a>
           </li>
@@ -89,25 +89,25 @@
           </li>
           <li>
             <a href="/" class="recommend-entry">
-              <img src="/static/test/47365_main.jpg" class="recommend-img" />
+              <img src="../../static/test/47365_main.jpg" class="recommend-img" />
               <p class="recommend-title">記事タイトル</p>
             </a>
           </li>
           <li>
             <a href="/" class="recommend-entry">
-              <img src="/static/test/47365_main.jpg" class="recommend-img" />
+              <img src="../../static/test/47365_main.jpg" class="recommend-img" />
               <p class="recommend-title">記事タイトル</p>
             </a>
           </li>
           <li>
             <a href="/" class="recommend-entry">
-              <img src="/static/test/47365_main.jpg" class="recommend-img" />
+              <img src="../../static/test/47365_main.jpg" class="recommend-img" />
               <p class="recommend-title">記事タイトル</p>
             </a>
           </li>
           <li>
             <a href="/" class="recommend-entry">
-              <img src="/static/test/47365_main.jpg" class="recommend-img" />
+              <img src="../../static/test/47365_main.jpg" class="recommend-img" />
               <p class="recommend-title">記事タイトル</p>
             </a>
           </li>
@@ -125,25 +125,25 @@
           </li>
           <li>
             <a href="/" class="recommend-entry">
-              <img src="/static/test/47365_main.jpg" class="recommend-img" />
+              <img src="../../static/test/47365_main.jpg" class="recommend-img" />
               <p class="recommend-title">記事タイトル</p>
             </a>
           </li>
           <li>
             <a href="/" class="recommend-entry">
-              <img src="/static/test/47365_main.jpg" class="recommend-img" />
+              <img src="../../static/test/47365_main.jpg" class="recommend-img" />
               <p class="recommend-title">記事タイトル</p>
             </a>
           </li>
           <li>
             <a href="/" class="recommend-entry">
-              <img src="/static/test/47365_main.jpg" class="recommend-img" />
+              <img src="../../static/test/47365_main.jpg" class="recommend-img" />
               <p class="recommend-title">記事タイトル</p>
             </a>
           </li>
           <li>
             <a href="/" class="recommend-entry">
-              <img src="/static/test/47365_main.jpg" class="recommend-img" />
+              <img src="../../static/test/47365_main.jpg" class="recommend-img" />
               <p class="recommend-title">記事タイトル</p>
             </a>
           </li>

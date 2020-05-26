@@ -4,7 +4,7 @@
   <div id="searching">
     <input type="text" v-model="keyword">
     <table>
-      <tr v-for="store in filteredStores" v-bind:key='store'>
+      <tr v-for="store in filteredStores" v-bind:key="store">
         <td><p>店舗名：</p>{{ store.storeName }}</td>
         <td><p>カテゴリ：</p>{{ store.storeCategory }}</td>
         <!-- <td><p>住所：</p>{{ store.storeAddress }}</td> -->

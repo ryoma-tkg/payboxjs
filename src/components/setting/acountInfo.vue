@@ -2,12 +2,12 @@
    <div>
       <div class="title">
         <!-- 戻るボタン -->
-        <router-link to="/setting"><button><img src="/static/test/modoru_kuro.svg" alt=""></button></router-link>
+        <router-link to="/setting"><button><img src="../../../static/test/modoru_kuro.svg" alt=""></button></router-link>
         <h1 class="sub_con">アカウント情報</h1>
       </div>
       <div class="top_speas"></div>
       <div class="user_info">
-         <img src="/static/test/47365_main.jpg" alt="プロフィール写真" id="user_image">
+         <img src="../../../static/test/47365_main.jpg" alt="プロフィール写真" id="user_image">
        </div>
 
       <p class="user_name">{{username}}</p>
