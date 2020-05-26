@@ -11,31 +11,31 @@
         <ul class="carousel">
           <li>
             <!--liが増えると項目が増えます。-->
-            <a href="任意の記事URL" class="recommend-entry">
+            <a href="/" class="recommend-entry">
               <img src="../../static/test/47365_main.jpg" class="recommend-img" />
               <p class="recommend-title">マツコデラックス機能追加</p>
             </a>
           <li>
-            <a href="任意の記事URL" class="recommend-entry">
-              <img src="アイキャッチ画像URL" class="recommend-img" />
+            <a href="/" class="recommend-entry">
+              <img src="../../static/test/47365_main.jpg" class="recommend-img" />
               <p class="recommend-title">記事タイトル</p>
             </a>
           </li>
           <li>
-            <a href="任意の記事URL" class="recommend-entry">
-              <img src="アイキャッチ画像URL" class="recommend-img" />
+            <a href="/" class="recommend-entry">
+              <img src="../../static/test/47365_main.jpg" class="recommend-img" />
               <p class="recommend-title">記事タイトル</p>
             </a>
           </li>
           <li>
-            <a href="任意の記事URL" class="recommend-entry">
-              <img src="アイキャッチ画像URL" class="recommend-img" />
+            <a href="/" class="recommend-entry">
+              <img src="../../static/test/47365_main.jpg" class="recommend-img" />
               <p class="recommend-title">記事タイトル</p>
             </a>
           </li>
           <li>
-            <a href="任意の記事URL" class="recommend-entry">
-              <img src="アイキャッチ画像URL" class="recommend-img" />
+            <a href="/" class="recommend-entry">
+              <img src="../../static/test/47365_main.jpg" class="recommend-img" />
               <p class="recommend-title">記事タイトル</p>
             </a>
           </li>
@@ -46,32 +46,32 @@
       <div class="recommends">
         <ul class="carousel">
           <li>
-            <a href="任意の記事URL" class="recommend-entry">
+            <a href="/" class="recommend-entry">
               <img src="../../static/test/47365_main.jpg" class="recommend-img" />
               <p class="recommend-title">マツコデラックス機能追加</p>
             </a>
           </li>
           <li>
-            <a href="任意の記事URL" class="recommend-entry">
-              <img src="アイキャッチ画像URL" class="recommend-img" />
+            <a href="/" class="recommend-entry">
+              <img src="../../static/test/47365_main.jpg" class="recommend-img" />
               <p class="recommend-title">記事タイトル</p>
             </a>
           </li>
           <li>
-            <a href="任意の記事URL" class="recommend-entry">
-              <img src="アイキャッチ画像URL" class="recommend-img" />
+            <a href="/" class="recommend-entry">
+              <img src="../../static/test/47365_main.jpg" class="recommend-img" />
               <p class="recommend-title">記事タイトル</p>
             </a>
           </li>
           <li>
-            <a href="任意の記事URL" class="recommend-entry">
-              <img src="アイキャッチ画像URL" class="recommend-img" />
+            <a href="/" class="recommend-entry">
+              <img src="../../static/test/47365_main.jpg" class="recommend-img" />
               <p class="recommend-title">記事タイトル</p>
             </a>
           </li>
           <li>
-            <a href="任意の記事URL" class="recommend-entry">
-              <img src="アイキャッチ画像URL" class="recommend-img" />
+            <a href="/" class="recommend-entry">
+              <img src="../../static/test/47365_main.jpg" class="recommend-img" />
               <p class="recommend-title">記事タイトル</p>
             </a>
           </li>
@@ -82,32 +82,32 @@
       <div class="recommends">
         <ul class="carousel">
           <li>
-            <a href="任意の記事URL" class="recommend-entry">
+            <a href="/" class="recommend-entry">
               <img src="../../static/test/47365_main.jpg" class="recommend-img" />
               <p class="recommend-title">マツコデラックス機能追加</p>
             </a>
           </li>
           <li>
-            <a href="任意の記事URL" class="recommend-entry">
-              <img src="アイキャッチ画像URL" class="recommend-img" />
+            <a href="/" class="recommend-entry">
+              <img src="../../static/test/47365_main.jpg" class="recommend-img" />
               <p class="recommend-title">記事タイトル</p>
             </a>
           </li>
           <li>
-            <a href="任意の記事URL" class="recommend-entry">
-              <img src="アイキャッチ画像URL" class="recommend-img" />
+            <a href="/" class="recommend-entry">
+              <img src="../../static/test/47365_main.jpg" class="recommend-img" />
               <p class="recommend-title">記事タイトル</p>
             </a>
           </li>
           <li>
-            <a href="任意の記事URL" class="recommend-entry">
-              <img src="アイキャッチ画像URL" class="recommend-img" />
+            <a href="/" class="recommend-entry">
+              <img src="../../static/test/47365_main.jpg" class="recommend-img" />
               <p class="recommend-title">記事タイトル</p>
             </a>
           </li>
           <li>
-            <a href="任意の記事URL" class="recommend-entry">
-              <img src="アイキャッチ画像URL" class="recommend-img" />
+            <a href="/" class="recommend-entry">
+              <img src="../../static/test/47365_main.jpg" class="recommend-img" />
               <p class="recommend-title">記事タイトル</p>
             </a>
           </li>
@@ -118,32 +118,32 @@
       <div class="recommends">
         <ul class="carousel">
           <li>
-            <a href="任意の記事URL" class="recommend-entry">
+            <a href="/" class="recommend-entry">
               <img src="../../static/test/47365_main.jpg" class="recommend-img" />
               <p class="recommend-title">マツコデラックス機能追加</p>
             </a>
           </li>
           <li>
-            <a href="任意の記事URL" class="recommend-entry">
-              <img src="アイキャッチ画像URL" class="recommend-img" />
+            <a href="/" class="recommend-entry">
+              <img src="../../static/test/47365_main.jpg" class="recommend-img" />
               <p class="recommend-title">記事タイトル</p>
             </a>
           </li>
           <li>
-            <a href="任意の記事URL" class="recommend-entry">
-              <img src="アイキャッチ画像URL" class="recommend-img" />
+            <a href="/" class="recommend-entry">
+              <img src="../../static/test/47365_main.jpg" class="recommend-img" />
               <p class="recommend-title">記事タイトル</p>
             </a>
           </li>
           <li>
-            <a href="任意の記事URL" class="recommend-entry">
-              <img src="アイキャッチ画像URL" class="recommend-img" />
+            <a href="/" class="recommend-entry">
+              <img src="../../static/test/47365_main.jpg" class="recommend-img" />
               <p class="recommend-title">記事タイトル</p>
             </a>
           </li>
           <li>
-            <a href="任意の記事URL" class="recommend-entry">
-              <img src="アイキャッチ画像URL" class="recommend-img" />
+            <a href="/" class="recommend-entry">
+              <img src="../../static/test/47365_main.jpg" class="recommend-img" />
               <p class="recommend-title">記事タイトル</p>
             </a>
           </li>
