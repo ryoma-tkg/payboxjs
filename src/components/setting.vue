@@ -46,7 +46,7 @@
 <script>
 module.exports = {
   methods: {
-    Logout: function() {
+    Logout: function () {
       const result = window.confirm('ログアウトしますか？')
       if (result) {
         // ログアウトするコードを記入する

@@ -2,10 +2,6 @@
   <div>
     <div class="title">
       <h1>お知らせ</h1>
-
-
-
-
     </div>
     <div class="top_speas"></div>
     <div class="newses">
