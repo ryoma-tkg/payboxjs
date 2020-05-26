@@ -24,7 +24,7 @@ async function getStoreRequest (latitude, longitude) {
     // url = 'http://160.251.15.239/api/shops?latitude=2.3&longitude=2.3'
     var url = 'http://160.251.15.239/api/shops?latitude='
     url += String(latitude) + '&' + String(longitude)
-    url = 'http://160.251.15.239/api/shops?latitude=61.00000&longitude=41.0000'
+    // url = 'http://160.251.15.239/api/shops?latitude=61.00000&longitude=41.0000' // for test
     console.log('REST url: ', url)
     // (1) http://localhost:4000/comments (コメント一覧のWeb API)にGETリクエストして、コメント一覧のレスポンスを取得しましょう (Fetch APIを使います)
     const response = await fetch(url)
