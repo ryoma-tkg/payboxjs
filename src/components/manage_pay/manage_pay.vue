@@ -39,6 +39,17 @@
       </select>
     </div>
 
+    <!-- 楽天Pay -->
+    <div>
+      <label for="rakutenPay">楽天Pay</label>
+      <select v-model="rakutenPay">
+        <option disabled value="">登録クレジットカード還元率選択</option>
+        <option>ポイント利用のみ</option>
+        <option>0.5%</option>
+        <option>1%</option>
+      </select>
+    </div>
+
     <!-- Kyash -->
     <div>
       <input
@@ -70,6 +81,7 @@ export default {
       visaLinePay: false,
       linePay: false,
       lineRank: '',
+      rakutenPay: '',
       kyash: false,
       kyash_credit: '',
       // value
@@ -105,6 +117,16 @@ export default {
         }
       } else {
         this.usePayAndReturnRate['LINE Pay'] = 0
+      }
+
+      // 楽天Pay
+      if (this.rakutenPay !== '') {
+        if (this.rakutenPay === '0.5%') {
+          this.usePayAndReturnRate['楽天Pay'] = 0.5
+        }
+        if (this.rakutenPay === '1%') {
+          this.usePayAndReturnRate['楽天Pay'] = 1
+        }
       }
 
       // kyash
