@@ -46,21 +46,21 @@
               <ul class="carousel">
                 <li>
                   <!--liが増えると項目が増えます。-->
-                  <a href="任意の記事URL" class="recommend-entry">
-                    <img src="../../static/test/47365_main.jpg" class="recommend-img" />
+                  <div class="recommend-entry">
+                    <button @click="eating"><img src="../../static/test/47365_main.jpg" class="recommend-img" /></button>
                     <p class="recommend-title">食事</p>
-                  </a>
+                  </div>
                 <li>
-                  <a href="任意の記事URL" class="recommend-entry">
-                    <img src="../../static/test/47365_main.jpg" class="recommend-img" />
+                  <div class="recommend-entry">
+                    <button @click="fassion"><img src="../../static/test/47365_main.jpg" class="recommend-img" /></button>
                     <p class="recommend-title">ファッション</p>
-                  </a>
+                  </div>
                 </li>
                 <li>
-                  <a href="任意の記事URL" class="recommend-entry">
-                    <img src="../../static/test/47365_main.jpg" class="recommend-img" />
-                    <p class="recommend-title">焼肉</p>
-                  </a>
+                  <div class="recommend-entry">
+                    <button @click="convenienceStore"><img src="../../static/test/47365_main.jpg" class="recommend-img" /></button>
+                    <p class="recommend-title">コンビニ</p>
+                  </div>
                 </li>
               </ul>
             </div>
@@ -143,8 +143,14 @@ export default {
     Clear: function () {
       this.keyword = ''
     },
-    CategorySearch: function () {
-      this.keyword = ''
+    eating: function () {
+      this.keyword = '食事'
+    },
+    fassion: function () {
+      this.keyword = 'ファッション'
+    },
+    convenienceStore: function () {
+      this.keyword = 'コンビニエンスストア'
     }
   }
 }
