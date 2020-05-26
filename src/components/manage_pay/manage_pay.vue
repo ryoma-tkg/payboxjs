@@ -56,7 +56,6 @@
     </div>
 
     <button v-on:click="register">登録</button>
-    {{position}}
   </div>
 </template>
 
@@ -72,30 +71,55 @@ export default {
       linePay: false,
       lineRank: '',
       kyash: false,
-      kyash_credit: 0,
+      kyash_credit: '',
       // value
-      position: [ 0, 0 ],
       usePayAndReturnRate: JSON.parse('{}')
     }
   },
   methods: {
-    getPosition: function () {
-      navigator.geolocation.getCurrentPosition(this.getPositionInner)
-    },
-    getPositionInner: function (position) {
-      var crd = position.coords
-      this.position[0] = crd.latitude
-      this.position[1] = crd.longitude
-      console.log(this.position[0], this.position[1])
-    },
     register: function () {
-      // var myPaysHold = {}
+      // 初期化
+      this.usePayAndReturnRate = {}
       // 還元率計算
+      // PayPay 現金
       if (this.paypayMoney) {
         this.usePayAndReturnRate['PayPay(現金チャージ)'] = 0.5
-        this.getPosition()
-        console.log(this.usePayAndReturnRate)
       }
+      // Visa Line Pay クレジットカード
+      if (this.visaLinePay) {
+        this.usePayAndReturnRate['visa LINE Payカード'] = 3
+
+        if (this.linePay) {
+          if (this.lineRank === 'レギュラー') {
+            this.usePayAndReturnRate['LINE Pay'] = 1
+          }
+          if (this.lineRank === 'シルバー') {
+            this.usePayAndReturnRate['LINE Pay'] = 1.5
+          }
+          if (this.lineRank === 'ゴールド') {
+            this.usePayAndReturnRate['LINE Pay'] = 2
+          }
+          if (this.lineRank === 'プラチナ') {
+            this.usePayAndReturnRate['LINE Pay'] = 3
+          }
+        }
+      } else {
+        this.usePayAndReturnRate['LINE Pay'] = 0
+      }
+
+      // kyash
+      if (this.kyash) {
+        this.usePayAndReturnRate['Kyash Card'] = 1
+
+        if (this.kyash_credit === '0.5%') {
+          this.usePayAndReturnRate['Kyash Card'] += 0.5
+        }
+        if (this.kyash_credit === '1%') {
+          this.usePayAndReturnRate['Kyash Card'] += 1
+        }
+      }
+
+      console.log(this.usePayAndReturnRate)
       // this.$localStorage.set(key,value)
     }
   }
