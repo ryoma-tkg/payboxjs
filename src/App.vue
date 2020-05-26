@@ -19,6 +19,30 @@ export default {
 </script>
 
 <style>
+  *{
+    margin: 0px;
+    padding:0px;
+  }
+
+  #footer{
+      height:60px;
+      width: 100%;
+      background-color: #FFF;
+      text-align: center;
+      padding-top: 25px;
+      font-size: 20px;
+      color: #626262;
+
+      border-radius: 30px 30px 0 0;
+
+      position: fixed;
+      bottom:0px;
+
+      -webkit-box-shadow: 0px 5px 50px 0px rgba(0,0,0,0.2);
+      -moz-box-shadow: 0px 5px 50px 0px rgba(0,0,0,0.2);
+      box-shadow: 0px 5px 50px 0px rgba(0,0,0,0.2);
+  }
+
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
