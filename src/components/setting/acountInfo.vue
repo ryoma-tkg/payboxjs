@@ -33,7 +33,8 @@
 </template>
 
 <script>
-module.exports = {
+// import acountInfo from '../setting'
+export default {
   data: function () {
     return {
       settlements: [
