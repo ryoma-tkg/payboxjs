@@ -11,10 +11,10 @@
         <ul class="carousel">
           <li>
             <!--liが増えると項目が増えます。-->
-            <a href="/" class="recommend-entry">
+            <router-link to="/info/newsystem/newsystem20200527" class="recommend-entry">
               <img src="../../static/test/47365_main.jpg" class="recommend-img" />
               <p class="recommend-title">マツコデラックス機能追加</p>
-            </a>
+            </router-link>
           <li>
             <a href="/" class="recommend-entry">
               <img src="../../static/test/47365_main.jpg" class="recommend-img" />
@@ -46,10 +46,10 @@
       <div class="recommends">
         <ul class="carousel">
           <li>
-            <a href="/" class="recommend-entry">
+            <router-link to="/info/recommend/recommend20200527" class="recommend-entry">
               <img src="../../static/test/47365_main.jpg" class="recommend-img" />
               <p class="recommend-title">マツコデラックス機能追加</p>
-            </a>
+            </router-link>
           </li>
           <li>
             <a href="/" class="recommend-entry">
@@ -82,10 +82,10 @@
       <div class="recommends">
         <ul class="carousel">
           <li>
-            <a href="/" class="recommend-entry">
+            <router-link to="/info/campaign/campaign20200527" class="recommend-entry">
               <img src="../../static/test/47365_main.jpg" class="recommend-img" />
               <p class="recommend-title">マツコデラックス機能追加</p>
-            </a>
+            </router-link>
           </li>
           <li>
             <a href="/" class="recommend-entry">
@@ -113,15 +113,15 @@
           </li>
         </ul>
       </div>
-      <h2>その他</h2>
+      <h2>メンテナンス情報</h2>
       <!--その他-->
       <div class="recommends">
         <ul class="carousel">
           <li>
-            <a href="/" class="recommend-entry">
+            <router-link to="/info/maintenance/maintenance20200527" class="recommend-entry">
               <img src="../../static/test/47365_main.jpg" class="recommend-img" />
               <p class="recommend-title">マツコデラックス機能追加</p>
-            </a>
+            </router-link>
           </li>
           <li>
             <a href="/" class="recommend-entry">
