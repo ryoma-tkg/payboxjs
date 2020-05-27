@@ -239,8 +239,7 @@ export default {
 
         if (this.isAu === 'auユーザー') {
           this.usePayAndReturnRate['isAu'] = true
-        }
-        if (this.isAu === 'au以外のユーザー') {
+        } else {
           this.usePayAndReturnRate['isAu'] = false
         }
       }
