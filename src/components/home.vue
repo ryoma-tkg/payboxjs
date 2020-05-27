@@ -56,14 +56,20 @@ async function getStoreRequest (latitude, longitude) {
     // (2) レスポンスのボディを取得して、変数に代入しましょう (ボディはJSON形式です)
     let stores = await response.json()
     stores = stores['data']
-    console.log('stores: ', stores)
+    // console.log('stores: ', stores)
+
     // 現在位置から店までの距離取得
     for (let key in stores) {
       stores[key]['distance'] = Math.pow(Number(stores[key]['latitude']) - latitude, 2) + Math.pow(Number(stores[key]['longitude']) - longitude, 2)
     }
+
     // 近い店順に並び替え
     stores.sort(compare)
     console.log('stores: ', stores)
+
+    // 1番近い店名文字列分割
+    let storName = stores[0].name.split('-')[0]
+    console.log('storName: ', storName)
   } catch (error) {
     console.log('例外をキャッチしたよ！')
     console.error(error)
