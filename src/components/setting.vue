@@ -9,7 +9,7 @@
     <div class="user_info">
       <img src="../../static/test/47365_main.jpg" alt="プロフィール写真" id="user_image">
       <!--仮で画像を入れています、処理を変えてください。-->
-      <p class="user_name">マツコデラックス</p>
+      <p class="user_name">{{ LogInInfo }}</p>
     </div>
     <ul class="setting">
       <router-link to="/setting/acountInfo">
@@ -44,12 +44,18 @@
   </div>
 </template>
 <script>
-module.exports = {
+export default {
+  data () {
+    return {
+      LogInInfo: 'マツコデラックス'
+    }
+  },
   methods: {
     Logout: function () {
       const result = window.confirm('ログアウトしますか？')
       if (result) {
-        // ログアウトするコードを記入する
+        // ログアウトするコードを記入する(今回は仮にアカウント名を消す)
+        this.LogInInfo = 'ログインしていません'
         alert('ログアウトしました')
       }
     }
