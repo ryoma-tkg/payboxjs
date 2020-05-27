@@ -84,6 +84,11 @@
         <option>0.5%</option>
         <option>1%</option>
       </select>
+      <select v-model="isAu">
+        <option disabled value="ケータイキャリア"></option>
+        <option>auユーザー</option>
+        <option>au以外のユーザー</option>
+      </select>
     </div>
 
     <!-- d払い -->
@@ -149,6 +154,7 @@ export default {
       rakutenPayCredit: '1%',
       auPay: false,
       auPayCredit: '1%',
+      isAu: '',
       dPay: false,
       dPayCredit: '1%',
       meruPay: false,
@@ -229,6 +235,12 @@ export default {
         }
         if (this.auPayCredit === '1%') {
           this.usePayAndReturnRate['auPay'] += 1
+        }
+
+        if (this.isAu === 'auユーザー') {
+          this.usePayAndReturnRate['isAu'] = true
+        } else {
+          this.usePayAndReturnRate['isAu'] = false
         }
       }
 
