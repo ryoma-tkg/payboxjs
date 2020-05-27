@@ -5,6 +5,19 @@
           <router-link to="/setting"><button><img src="../../../static/test/modoru_kuro.svg" alt=""></button></router-link>
           <h1 class="sub_con">このアプリについて</h1>
       </div>
+      <div class="top_speas"></div>
+    <h2 class="position">位置情報サービス</h2>
+    <label class="switch">
+      <input type="checkbox">
+      <span class="slider round"></span>
+    </label>
+    <p>※位置情報サービスは、お客様の位置を取得し、</p>
+    <p>今いるお店や周辺のお店を割り出すことにのみ使われます。</p>
+    <h2 class="settlement">決済情報取り扱いに関して</h2>
+    <p class="explanation">本アプリは決済手段の種類のみを取得しており、</p>
+    <p class="explanation">お客様の決済情報は一切取得しておりません。</p>
+    <p class="explanation">アプリ使用によって、お客さまの決済情報が</p>
+    <p class="explanation">流出することはございません。</p>
     </div>
 </template>
 
