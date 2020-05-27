@@ -42,9 +42,9 @@
 <script>
 </script>
 
-<style>
+<style scoped>
 
-      *{
+   *{
       margin:0;
       padding:0;
    }
@@ -95,7 +95,7 @@
    }
 
    .top_speas{
-    margin-top: 120px;
+    margin-top: 110px;
    }
 
    .denwa{
@@ -105,7 +105,7 @@
     background-color: #FFF;
     margin-bottom: 40px;
 
-    border-radius: 50px;
+    border-radius: 20px;
 
     -webkit-box-shadow: 0px 5px 30px 0px rgba(0,0,0,0.3);
     -moz-box-shadow: 0px 5px 30px 0px rgba(0,0,0,0.3);
@@ -125,7 +125,7 @@
     padding: 10px 10px 0 10px;
     margin: 0 auto;
     background-color: #FFF;
-    border-radius: 50px;
+    border-radius: 20px;
     -webkit-box-shadow: 0px 5px 30px 0px rgba(0,0,0,0.3);
     -moz-box-shadow: 0px 5px 30px 0px rgba(0,0,0,0.3);
     box-shadow: 0px 5px 30px 0px rgba(0,0,0,0.3);
@@ -147,15 +147,16 @@
    }
 
    .toiawase li{
+     margin:10px 0 10px 0;
    }
 
    .toiawase input{
     width: 90%;
     padding-left: 20px;
     border:solid 3px #989898;
-    font-size: 25px;
+    font-size: 20px;
     height: 50px;
-    border-radius: 100px;
+    border-radius: 20px;
 
     transition: all 0.2s ease;
    }
@@ -165,9 +166,9 @@
    }
 
    .toiawase textarea{
-    width: 89%;
+    width: 87%;
     height: 200px;
-    padding: 10px;
+    padding: 15px;
     border:solid 3px #989898;
     font-size: 16px;
     border-radius: 20px;
@@ -183,6 +184,15 @@
     margin-bottom: 30px;
     font-size: 20px;
     color:#FFF;
+    border:none;
+
+    width: 97%;
+    height: 50px;
+    border-radius: 30px;
+   }
+
+   .toiawase button:hover{
+    background-color: #0B74DD;
    }
 
    .toiawase li label{

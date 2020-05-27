@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import managePay from '@/components/manage_pay/manage_pay'
+import pr from '@/components/pr'
 import home from '@/components/home'
 import search from '@/components/search'
 import info from '@/components/info'
@@ -18,11 +19,20 @@ import help from '@/components/setting/help'
 import promoFriends from '@/components/setting/promoFriends'
 import question from '@/components/setting/question'
 import logOut from '@/components/setting/logOut'
+import campaign20200527 from '@/components/info/campaign/campaign20200527'
+import maintenance20200527 from '@/components/info/maintenance/maintenance20200527'
+import newsystem20200527 from '@/components/info/newsystem/newsystem20200527'
+import recommend20200527 from '@/components/info/recommend/recommend20200527'
 
 Vue.use(Router)
 
 export default new Router({
   routes: [
+    {
+      path: '/pr',
+      name: 'pr',
+      component: pr
+    },
     {
       path: '/manage_pay',
       name: 'managePay',
@@ -112,6 +122,26 @@ export default new Router({
       path: '/setting/logOut',
       name: 'logOut',
       component: logOut
+    },
+    {
+      path: '/info/campaign/campaign20200527',
+      name: 'campaign20200527',
+      component: campaign20200527
+    },
+    {
+      path: '/info/maintenance/maintenance20200527',
+      name: 'maintenance20200527',
+      component: maintenance20200527
+    },
+    {
+      path: '/info/newsystem/newsystem20200527',
+      name: 'newsystem20200527',
+      component: newsystem20200527
+    },
+    {
+      path: '/info/recommend/recommend20200527',
+      name: 'recommend20200527',
+      component: recommend20200527
     }
   ]
 })

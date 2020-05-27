@@ -8,7 +8,7 @@
 </template>
 
 <script>
-// import axios from 'axios'
+import axios from 'axios'
 import _json from '../assets/pay_test.json'
 
 // ソート用比較関数
@@ -32,17 +32,10 @@ function getPosition () {
 
 async function getStoreRequest (latitude, longitude) {
   try {
-    // url = 'http://160.251.15.239/api/shops?latitude=2.3&longitude=2.3'
     let range = 10.011111
-    let url // let url = 'http://160.251.15.239/api/shops?latitude='
-    if (location.href.match(/localhost/)) {
-      url = 'http://160.251.15.239/api/shops?latitude='
-    } else {
-      url = '//160.251.15.239/api/shops?latitude='
-    }
     // latitude = 35.695443// for test2
     // longitude = 139.7000// for test2
-    url += String(latitude) + '&longitude=' + String(longitude) + '&range=' + String(range)
+    let url = 'https://ykrytk.ddo.jp/api/shops?latitude=' + String(latitude) + '&longitude=' + String(longitude) + '&range=' + String(range)
     // url = 'http://160.251.15.239/api/shops?latitude=61.00000&longitude=41.0000' // for test
     console.log('REST url: ', url)
 
@@ -56,14 +49,24 @@ async function getStoreRequest (latitude, longitude) {
     // (2) レスポンスのボディを取得して、変数に代入しましょう (ボディはJSON形式です)
     let stores = await response.json()
     stores = stores['data']
-    console.log('stores: ', stores)
+    // console.log('stores: ', stores)
+
     // 現在位置から店までの距離取得
     for (let key in stores) {
       stores[key]['distance'] = Math.pow(Number(stores[key]['latitude']) - latitude, 2) + Math.pow(Number(stores[key]['longitude']) - longitude, 2)
     }
+
     // 近い店順に並び替え
     stores.sort(compare)
     console.log('stores: ', stores)
+
+    // 1番近い店名文字列分割
+    let storName = stores[0].name.split('-')[0]
+    console.log('storName: ', storName)
+
+    axios.get('/assets/json/campaign.json').then((response) => {
+      console.log(response)
+    })
   } catch (error) {
     console.log('例外をキャッチしたよ！')
     console.error(error)
@@ -79,6 +82,9 @@ export default {
     }
   },
   created () {
+    axios.get('/static/campaign.json').then((response) => {
+      console.log(response)
+    })
     getPosition()
       .then((position) => {
         // GPS 取得した後の処理
