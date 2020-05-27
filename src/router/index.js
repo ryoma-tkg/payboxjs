@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import managePay from '@/components/manage_pay/manage_pay'
+import pr from '@/components/pr'
 import home from '@/components/home'
 import search from '@/components/search'
 import info from '@/components/info'
@@ -27,6 +28,11 @@ Vue.use(Router)
 
 export default new Router({
   routes: [
+    {
+      path: '/pr',
+      name: 'pr',
+      component: pr
+    },
     {
       path: '/manage_pay',
       name: 'managePay',
