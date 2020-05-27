@@ -157,7 +157,7 @@
 <script>
 </script>
 
-<style>
+<style scoped>
 .top_speas {
   margin-top: 120px
 }

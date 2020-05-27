@@ -43,7 +43,7 @@
 <script>
 </script>
 
-<style>
+<style scoped>
 * {
   margin: 0;
   padding: 0;
@@ -132,7 +132,7 @@
   width: 90%;
 
   list-style: none;
-  border-radius: 25px;
+  border-radius: 30px;
   width: 90%;
   -webkit-box-shadow: 0px 5px 30px 0px rgba(0, 0, 0, 0.3);
   -moz-box-shadow: 0px 5px 30px 0px rgba(0, 0, 0, 0.3);

@@ -1,4 +1,5 @@
 <template>
+  <div class="wrap_all">
   <div class="search_css">
     <h1>店舗検索</h1>
     <div id="searching">
@@ -7,13 +8,15 @@
         <!-- 検索アイコン(虫眼鏡) -->
         <img src="../../static/test/icons/mini_mushi.svg" alt="search_icon">
       </div>
-      <button @click="Clear">クリア</button>
+      <button @click="Clear" class="clear_button"><img src="../../static/test/icons/batsu.svg" alt="clear"></button>
       <div class="wrap">
         <div class="top_speas_s"></div>
         <!--検索結果です-->
         <!--検索結果が表示されるとき、カテゴリや、近くのお店が隠れる感じにしたいです。-->
         <section class="wrap_s">
           <ul>
+            <li>
+            </li>
             <li v-for="store in filteredStores" v-bind:key='store'>
               <ul class="kekka">
                 <!--お店の画像を入れる-->
@@ -38,6 +41,7 @@
         <!--カテゴリ_開始-->
         <div class="mo">
           <h2>カテゴリ</h2>
+        </div><!--wrapの終焉-->
         </div>
         <section class="category">
           <div class="newses">
@@ -67,6 +71,7 @@
           </div>
         </section>
         <!--カテゴリ終わり-->
+        <div class="wrap_all">
         <!--近くにある店_開始-->
         <div class="mo">
             <h2>近くのお店</h2>
@@ -85,7 +90,7 @@
                     <h4>"お店のカテゴリ"</h4>
                   </li>
                   <!-- 決済アイコンの表示 -->
-                  <!-- <li><img src="../../static/test/kessai/au.svg" alt="決済アイコン"></li> -->
+                  <li><img src="../../static/test/kessai/au.svg" alt="決済アイコン"></li>
                 </div>
                 <!-- <td><p>住所：</p>{{ store.storeAddress }}</td> -->
               </ul>
@@ -95,6 +100,8 @@
         <!--近くにある店終わり-->
       </div>
     </div>
+  </div>
+  <div class="bottom_space"></div>
   </div>
 </template>
 
@@ -156,10 +163,53 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 * {
   margin: 0;
   padding: 0;
+}
+
+.wrap_all{
+  width: 100%;
+  margin:0 auto;
+}
+
+.recommends button {
+    width: auto;
+    -webkit-appearance: none;
+    appearance: none;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    outline: none;
+    padding: 0;
+    border-radius: 20px;
+}
+
+.recommends button img{
+  width: 100%;
+  object-fit: cover;
+  border-radius: 20px;
+  -webkit-box-shadow: 0px 5px 15px 0px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: 0px 5px 15px 0px rgba(0, 0, 0, 0.5);
+  box-shadow: 0px 5px 15px 0px rgba(0, 0, 0, 0.5);
+}
+
+_::-webkit-full-page-media,
+_:future,
+:root .recommends button img{
+  position: relative;
+  top:3px;
+  width: 100%;
+  max-height: 100px;
+  object-fit: cover;
+}
+
+_::-webkit-full-page-media,
+_:future,
+:root .recommends button{
+  width: 100%;
+  max-height: 97px;
 }
 
 .search_css h1 {
@@ -198,7 +248,6 @@ export default {
   -webkit-box-shadow: 0px 2px 20px 0px rgba(11, 116, 221, 0.25);
   -moz-box-shadow: 0px 2px 20px 0px rgba(11, 116, 221, 0.25);
   box-shadow: 0px 2px 20px 0px rgba(11, 116, 221, 0.25);
-
 }
 
 .search_css .search img {
@@ -209,6 +258,20 @@ export default {
   left: 30px;
   padding: 9px 8px;
   object-fit: cover;
+}
+.clear_button img{
+  width: 20px;
+  height: 100%;
+}
+
+.clear_button{
+  border:none;
+  width:30px;
+  height:30px;
+  position: relative;
+  bottom: 43px;
+  left: 130px;
+  background-color: transparent;
 }
 
 .search_css .kekka {
@@ -279,35 +342,6 @@ h4 {
   object-fit: cover;
 }
 
-_::-webkit-full-page-media,
-_:future,
-:root .wrap {
-  width: 90%;
-  margin: 0 auto;
-  line-height: 20px;
-}
-
-_::-webkit-full-page-media,
-_:future,
-:root ul li {
-  list-style: none;
-}
-
-_::-webkit-full-page-media,
-_:future,
-:root h4,
-h3 {
-  line-height: 20px;
-}
-
-_::-webkit-full-page-media,
-_:future,
-:root .nakami {
-  bottom: 1px;
-}
-
-.search_css .newses {}
-
 .search_css .mo h2 {
   margin: 0 auto;
   width: 85%;
@@ -346,13 +380,9 @@ _:future,
   text-align: center;
   display: inline-block;
   word-break: break-all;
-  border-radius: 30px;
+  border-radius: 20px;
   width: 150px;
   height: 100px;
-
-  -webkit-box-shadow: 0px 5px 15px 0px rgba(0, 0, 0, 0.5);
-  -moz-box-shadow: 0px 5px 15px 0px rgba(0, 0, 0, 0.5);
-  box-shadow: 0px 5px 15px 0px rgba(0, 0, 0, 0.5);
 }
 
 .search_css .category .recommends a.recommend-entry {
@@ -378,16 +408,18 @@ _:future,
   color: #FFF;
 
   position: relative;
-  bottom: 80px;
-  left: 5px;
+  bottom: 65px;
+  left: 15%;
+  font-weight: 900;
 }
 
+/*
 .search_css .category .recommend-img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   border-radius: 30px
-}
+}*/
 
 .search_css .wrap_s {
   margin: 0 auto;
@@ -403,11 +435,11 @@ _:future,
 
 }
 
-.search_css .top_speas_s {
-  margin-top: 30px;
-}
-
 .search_css .top_speas_b{
   margin-bottom: 150px;
+}
+
+.bottom_space{
+  margin-bottom: 200px;
 }
 </style>
