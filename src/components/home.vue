@@ -99,6 +99,7 @@ export default {
         } else {
           jsonUrl = 'https://yosipy.github.io/payboxjs/static/campaign/campaign.json'
         }
+        console.log('jsonUrl: ', jsonUrl)
         axios.get(jsonUrl).then((response) => {
           let campaign = response.data
           console.log('campaign: ', campaign)
