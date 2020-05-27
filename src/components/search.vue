@@ -4,7 +4,7 @@
     <h1>店舗検索</h1>
     <div id="searching">
       <div class="search">
-        <input type="text" v-model="keyword" placeholder="何をお探しですか？">
+        <input type="text" v-model="keyword" @change="getPosition" placeholder="何をお探しですか？">
         <!-- 検索アイコン(虫眼鏡) -->
         <img src="../../static/test/icons/mini_mushi.svg" alt="search_icon">
       </div>
@@ -106,13 +106,6 @@
 </template>
 
 <script>
-// GPS 取得
-function getPosition () {
-  return new Promise(function (resolve) {
-    navigator.geolocation.getCurrentPosition(resolve)
-  })
-}
-
 // ソート用比較関数
 function compare (a, b) {
   let r = 0
@@ -166,7 +159,22 @@ export default {
   },
   computed: {
     filteredStores: function () {
-      getPosition()
+      let stores = []
+      for (var i in searchStores.stores) {
+        let store = searchStores.stores[i]
+        if ((store.name.indexOf(this.keyword) !== -1 || store.category_name.indexOf(this.keyword) !== -1) && this.keyword !== '') {
+          stores.push(store)
+        }
+      }
+      return stores
+    }
+  },
+  methods: {
+    // GPS 取得
+    getPosition: function () {
+      return new Promise(function (resolve) {
+        navigator.geolocation.getCurrentPosition(resolve)
+      })
         .then((position) => {
           // GPS 取得した後の処理
           console.log('position', position)
@@ -179,17 +187,7 @@ export default {
         .catch((err) => {
           console.error(err.message)
         })
-      let stores = []
-      for (var i in searchStores.stores) {
-        let store = searchStores.stores[i]
-        if ((store.name.indexOf(this.keyword) !== -1 || store.category_name.indexOf(this.keyword) !== -1) && this.keyword !== '') {
-          stores.push(store)
-        }
-      }
-      return stores
-    }
-  },
-  methods: {
+    },
     Clear: function () {
       this.keyword = ''
     },
