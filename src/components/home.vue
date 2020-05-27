@@ -9,6 +9,7 @@
 <script>
 import axios from 'axios'
 import moment from 'moment'
+moment.locale('ja')
 
 export default {
   data () {
@@ -17,7 +18,8 @@ export default {
       list: []
     }
   },
-  created () {
+  created () {},
+  mounted () {
     axios.get('/static/campaign.json').then((response) => {
       console.log(response)
     })
@@ -84,23 +86,41 @@ export default {
         console.log('stores: ', stores)
 
         // 1番近い店名文字列分割
-        let store = stores[0]
-        // let storeName = store.name.split('-')[0]
-        console.log('store: ', store)
+        let mostNearStore = stores[0]
+        // let mostNearStoreName = mostNearStore.name.split('-')[0]
+        console.log('mostNearStore: ', mostNearStore)
 
         // キャンペーン中のPayを取得
         axios.get('/static/campaign/campaign.json').then((response) => {
+          let campaign = response.data
+          console.log('campaign: ', campaign)
+
+          // 設定している決済方法一覧を取得
+          let usePayAndReturnRate = this.$localStorage.get('usePayAndReturnRate')
+          usePayAndReturnRate = JSON.parse(usePayAndReturnRate)
+          console.log('usePayAndReturnRate: ', usePayAndReturnRate)
+          // キャンペーンの還元率を考慮
+          let now = moment() // 今の日時
+          for (let payName in usePayAndReturnRate) { // 自分の登録Pay
+            if (campaign[payName] !== undefined) {
+              let jStores = campaign[payName]
+              for (let storeName in jStores) {
+                if (storeName === 'all store') {
+                  let date = jStores[storeName]['date'].split('~')
+                  let start = date[0]
+                  let end = date[1]
+                  console.log('date: ', date)
+                  if (now.isAfter(start) && now.isBefore(end)) {
+                    let bonus = Number(jStores[storeName]['bonus'])
+                    usePayAndReturnRate[payName] = Number(usePayAndReturnRate[payName]) + bonus
+                  }
+                }
+              }
+            }
+          }
+
+          console.log('paypay', usePayAndReturnRate)
         })
-
-        // 設定している決済方法一覧を取得
-        let usePayAndReturnRate = this.$localStorage.get('usePayAndReturnRate')
-        usePayAndReturnRate = JSON.parse(usePayAndReturnRate)
-        console.log(usePayAndReturnRate)
-        for (let uparr in usePayAndReturnRate) {
-          console.log(uparr)
-        }
-
-        moment()
       } catch (error) {
         console.log('例外をキャッチしたよ！')
         console.error(error)
