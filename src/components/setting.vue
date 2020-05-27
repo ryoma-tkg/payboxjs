@@ -69,6 +69,10 @@ export default {
   padding: 0;
 }
 
+body{
+  margin: 0 auto;
+}
+
 .title {
   height: 45px;
   width: 100%;

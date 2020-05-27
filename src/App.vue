@@ -4,10 +4,19 @@
     <router-view></router-view>
     <div id="footer">
       <!--リンクタグを生成します。-->
-      <router-link to="/">home</router-link>
-      <router-link to="/search">search</router-link>
-      <router-link to="/info">info</router-link>
-      <router-link to="/setting">settting</router-link>
+    <ul>
+      <li>
+        <router-link to="/"><img src="../static/test/nav/home.svg" alt=""></router-link>
+      </li>
+      <li>
+        <router-link to="/search"><img src="../static/test/nav/search.svg" alt=""></router-link>
+      </li>
+      <li>
+        <router-link to="/info"><img src="../static/test/nav/bell.svg" alt=""></router-link></li>
+      <li>
+        <router-link to="/setting"><img src="../static/test/nav/acount.svg" alt=""></router-link>
+      </li>
+    </ul>
     </div>
   </div>
 </template>
@@ -29,7 +38,7 @@ export default {
       width: 100%;
       background-color: #FFF;
       text-align: center;
-      padding-top: 25px;
+      padding-top: 20px;
       font-size: 20px;
       color: #626262;
 
@@ -50,5 +59,24 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+
+#footer ul li{
+  display: inline;
+  list-style: none;
+}
+
+#footer ul{
+  margin:0 auto;
+}
+
+#footer li{
+  margin: 0 20px 0 20px;
+  text-align: center;
+}
+
+#footer li img{
+  width: 30px;
+  height: 30px;;
 }
 </style>

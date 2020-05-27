@@ -119,4 +119,27 @@ export default {
   margin-top: 15px;
   font-size: 20px;
 }
+
+li{
+   margin-top:20px;
+   list-style: none;
+}
+
+li button {
+  width: 85%;
+  font-size: 17px;
+  border: none;
+  height: 50px;
+  background-color: #FFF;
+  color: #626262;
+  text-align: center;
+
+  border-radius: 25px;
+
+  transition: all 0.1s ease-out;
+  -webkit-box-shadow: 0px 5px 30px 0px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 0px 5px 30px 0px rgba(0, 0, 0, 0.3);
+  box-shadow: 0px 5px 30px 0px rgba(0, 0, 0, 0.3);
+}
+
 </style>
