@@ -39,7 +39,9 @@ module.exports = {
       settlements: [
         {text: '使用可能な決済アイコン1'},
         {text: '使用可能な決済アイコン2'}
-      ]
+      ],
+      username: '',
+      usermail: ''
     }
   }
 }
