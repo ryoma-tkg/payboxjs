@@ -8,7 +8,7 @@
 </template>
 
 <script>
-// import axios from 'axios'
+import axios from 'axios'
 import _json from '../assets/pay_test.json'
 
 // ソート用比較関数
@@ -70,6 +70,10 @@ async function getStoreRequest (latitude, longitude) {
     // 1番近い店名文字列分割
     let storName = stores[0].name.split('-')[0]
     console.log('storName: ', storName)
+
+    axios.get('/assets/json/campaign.json').then((response) => {
+      console.log(response)
+    })
   } catch (error) {
     console.log('例外をキャッチしたよ！')
     console.error(error)
@@ -85,6 +89,9 @@ export default {
     }
   },
   created () {
+    axios.get('/static/campaign.json').then((response) => {
+      console.log(response)
+    })
     getPosition()
       .then((position) => {
         // GPS 取得した後の処理
