@@ -160,8 +160,8 @@ export default {
   computed: {
     filteredStores: function () {
       let stores = []
-      for (var i in searchStores.stores) {
-        let store = searchStores.stores[i]
+      for (var i in this.stores) {
+        let store = this.stores[i]
         if ((store.name.indexOf(this.keyword) !== -1 || store.category_name.indexOf(this.keyword) !== -1) && this.keyword !== '') {
           stores.push(store)
         }
