@@ -1,7 +1,7 @@
 <template>
   <div>
     <div>
-    
+
     </div>
     <p>他の決済手段</p>
     <p>お知らせキャンペーン</p>
@@ -99,7 +99,7 @@ export default {
         } else {
           jsonUrl = 'https://yosipy.github.io/payboxjs/static/campaign/campaign.json'
         }
-        axios.get('/static/campaign/campaign.json').then((response) => {
+        axios.get(jsonUrl).then((response) => {
           let campaign = response.data
           console.log('campaign: ', campaign)
 
