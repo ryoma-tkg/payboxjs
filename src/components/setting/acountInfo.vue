@@ -40,8 +40,8 @@ module.exports = {
         {text: '使用可能な決済アイコン1'},
         {text: '使用可能な決済アイコン2'}
       ],
-      username: '',
-      usermail: ''
+      username: 'マツコデラックス',
+      usermail: 'matsuko-dx@gmo.jp'
     }
   }
 }

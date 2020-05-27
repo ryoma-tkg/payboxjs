@@ -9,7 +9,7 @@
     <div class="user_info">
       <img src="../../static/test/47365_main.jpg" alt="プロフィール写真" id="user_image">
       <!--仮で画像を入れています、処理を変えてください。-->
-      <p class="user_name">"アカウント名"</p>
+      <p class="user_name">マツコデラックス</p>
     </div>
     <ul class="setting">
       <router-link to="/setting/acountInfo">
