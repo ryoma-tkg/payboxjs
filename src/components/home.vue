@@ -1,6 +1,8 @@
 <template>
   <div>
-    <p>ホーム</p>
+    <div>
+    
+    </div>
     <p>他の決済手段</p>
     <p>お知らせキャンペーン</p>
   </div>
@@ -14,7 +16,7 @@ moment.locale('ja')
 export default {
   data () {
     return {
-      message: 'Hello world!',
+      bestPayName: '',
       list: []
     }
   },
@@ -91,6 +93,12 @@ export default {
         console.log('mostNearStore: ', mostNearStore)
 
         // キャンペーン中のPayを取得
+        let jsonUrl
+        if (location.href.match(/localhost/)) {
+          jsonUrl = '/static/campaign/campaign.json'
+        } else {
+          jsonUrl = 'https://yosipy.github.io/payboxjs/static/campaign/campaign.json'
+        }
         axios.get('/static/campaign/campaign.json').then((response) => {
           let campaign = response.data
           console.log('campaign: ', campaign)
