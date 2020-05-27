@@ -35,11 +35,7 @@ async function getStoreRequest (latitude, longitude) {
     // url = 'http://160.251.15.239/api/shops?latitude=2.3&longitude=2.3'
     let range = 10.011111
     let url // let url = 'http://160.251.15.239/api/shops?latitude='
-    if (location.href.match(/localhost/)) {
-      url = 'http://160.251.15.239/api/shops?latitude='
-    } else {
-      url = '//160.251.15.239/api/shops?latitude='
-    }
+    url = 'https://ykrytk.ddo.jp/api/shops?latitude='
     // latitude = 35.695443// for test2
     // longitude = 139.7000// for test2
     url += String(latitude) + '&longitude=' + String(longitude) + '&range=' + String(range)
