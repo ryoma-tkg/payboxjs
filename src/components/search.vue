@@ -131,6 +131,20 @@ export default {
           storeCategory: 'スーパーマーケット',
           storeAddress: '渋谷区セルリアンタワー'
         }
+      ],
+      categories: [
+        {
+          id: 1,
+          text: '食事'
+        },
+        {
+          id: 2,
+          text: 'ファッション'
+        },
+        {
+          id: 3,
+          text: 'コンビニエンスストア'
+        }
       ]
     }
   },

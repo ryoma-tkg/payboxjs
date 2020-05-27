@@ -33,15 +33,16 @@
 </template>
 
 <script>
-module.exports = {
+// import acountInfo from '../setting'
+export default {
   data: function () {
     return {
       settlements: [
         {text: '使用可能な決済アイコン1'},
         {text: '使用可能な決済アイコン2'}
       ],
-      username: '',
-      usermail: ''
+      username: 'マツコデラックス',
+      usermail: 'matsuko-dx@gmo.jp'
     }
   }
 }
