@@ -279,7 +279,7 @@ export default {
 
       // メルペイ
       if (this.meruPay) {
-        this.usePayAndReturnRate['meruPay'] = 0
+        this.usePayAndReturnRate['メルペイ'] = 0
       }
 
       // kyash
