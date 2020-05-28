@@ -278,13 +278,12 @@ export default {
   }
 }
 </script>
-
+<!--
 <style scoped>
 *{
   margin: 0;
   padding: 0;
 }
-
 /*おすすめ */
 
 .osusume{
@@ -473,4 +472,4 @@ export default {
   background: red;
 }
 
-</style>
+</style>-->

@@ -12,7 +12,7 @@
 <script>
 </script>
 
-<style>
+<style scoped>
 .title{
   height: 45px;
   width: 100%;
