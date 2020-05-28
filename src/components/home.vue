@@ -8,7 +8,7 @@
             <p class="none">{{sortPayAndReturnRate[0].name}}</p>
             <p>還元率<span>{{sortPayAndReturnRate[0].rate}}％</span></p>
           </div>
-        <button class="clear_button"><p class="button_naka">paypayを使う</p></button>
+        <a class="clear_button"><p class="button_naka">paypayを使う</p></a>
       </div>
     </div><!--おすすめ終了-->
     <section class="wrapwarap"><!--決済比較マン-->
@@ -41,6 +41,30 @@
     <div class="clearfix"></div>
     <div class="prpr">
       <h3>お知らせキャンペーン</h3>
+      <div class="recommends">
+        <ul class="carousel">
+          <li>
+            <router-link to="/info/recommend/recommend20200527" class="recommend-entry">
+              <img src="../../static/test/47365_main.jpg" class="recommend-img" />
+            </router-link>
+          </li>
+          <li>
+            <a href="/" class="recommend-entry">
+              <img src="../../static/test/47365_main.jpg" class="recommend-img" />
+            </a>
+          </li>
+          <li>
+            <a href="/" class="recommend-entry">
+              <img src="../../static/test/47365_main.jpg" class="recommend-img" />
+            </a>
+          </li>
+          <li>
+            <a href="/" class="recommend-entry">
+              <img src="../../static/test/47365_main.jpg" class="recommend-img" />
+            </a>
+          </li>
+        </ul>
+      </div>
     </div>
 
     <div class="speacing"></div>
@@ -349,9 +373,9 @@ export default {
   max-height: 100px;
 }
 
-.osusume button{
+.osusume a.clear_button{
   margin: 10px auto 0 auto;
-  display: inline-block;
+  display: block;
   width: 75%;
   height: 40px;
   border-radius: 50px;
@@ -361,7 +385,7 @@ export default {
 
 }
 
-.osusume button::after{
+.osusume a.clear_button::after{
   text-align: center;
   width: 102%;
   height: 46px;
@@ -381,11 +405,11 @@ export default {
 }
 
 @media screen and (-webkit-min-device-pixel-ratio:0) {
-    _::-webkit-full-page-media, _:future, .osusume button::after {
+    _::-webkit-full-page-media, _:future, .osusume a.clear_button::after {
       bottom: 33px;
       right: 5px;
     }
-    _::-webkit-full-page-media, _:future, .osusume button{/*決済によって色が変わるよ*/
+    _::-webkit-full-page-media, _:future, .osusume a.clear_button{/*決済によって色が変わるよ*/
       padding-top: 5px;
     }
 }
@@ -626,7 +650,81 @@ h3{
 }
 
 .speacing{
-  margin-bottom: 200px;
+  margin-bottom: 100px;
+}
+
+/* ↓↓はてなユーザーは横幅がMAXにならない場合入れた方が良いかも↓↓ */
+#top-editarea {
+  width: 100%;
+  margin: 0 auto 0 auto;
+}
+
+/* ↓↓大衆向け↓↓ */
+.recommends {
+  margin: 0;
+  width: 100%;
+}
+
+.recommends .carousel {
+  list-style-type: none;
+  width: 100%;
+  overflow-x: scroll;
+  -webkit-overflow-scrolling: touch;
+  white-space: nowrap;
+  margin: 0 auto;
+}
+
+.carousel ul {
+  padding: 0 20px 0 20px;
+
+}
+
+.recommends .carousel li {
+  margin: 20px 10px 30px 20px;
+  text-align: center;
+  display: inline-block;
+  word-break: break-all;
+  border-radius: 30px;
+  width: 200px;
+}
+
+.recommends .carousel button{
+  border:none;
+  background:transparent;
+  border-radius: 30px;
+  height: 120px;
+}
+
+.recommends a.recommend-entry {
+  display: block;
+  width: 200px;
+  font-size: 1rem;
+  font-weight: 600;
+  position: relative;
+  line-height: 1.5;
+  border-radius: 30px;
+
+  text-decoration: none;
+  color: #505050;
+}
+
+.recommend-title {
+  display: flex;
+  padding: 10px 25px 15px 20px;
+  word-break: break-all;
+  width: 200px;
+  white-space: normal;
+  text-align: left;
+}
+
+.recommend-img {
+  width: 200px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 30px;
+  -webkit-box-shadow: 0px 5px 20px 0px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: 0px 5px 20px 0px rgba(0, 0, 0, 0.5);
+  box-shadow: 0px 5px 20px 0px rgba(0, 0, 0, 0.5);
 }
 
 </style>
