@@ -184,6 +184,27 @@ export default {
     }
   },
   methods: {
+    saveData: function () {
+      let save = JSON.parse('{}')
+      save['creditcard'] = this.creditcard
+      save['creditcardCredit'] = this.creditcardCredit
+      save['paypayMoney'] = this.paypayMoney
+      save['visaLinePay'] = this.visaLinePay
+      save['linePay'] = this.linePay
+      save['lineRank'] = this.lineRank
+      save['rakutenPay'] = this.rakutenPay
+      save['rakutenPayCredit'] = this.rakutenPayCredit
+      save['auPay'] = this.auPay
+      save['auPayCredit'] = this.auPayCredit
+      save['isAu'] = this.isAu
+      save['dPay'] = this.dPay
+      save['dPayCredit'] = this.dPayCredit
+      save['meruPay'] = this.meruPay
+      save['kyash'] = this.kyash
+      save['kyash_credit'] = this.kyash_credit
+
+      this.$localStorage.set('save', JSON.stringify(save))
+    },
     register: function () {
       // 初期化
       this.usePayAndReturnRate = {}
@@ -256,11 +277,11 @@ export default {
           this.usePayAndReturnRate['auPay'] += 1
         }
 
-        if (this.isAu === 'auユーザー') {
+        /* if (this.isAu === 'auユーザー') {
           this.usePayAndReturnRate['isAu'] = true
         } else {
           this.usePayAndReturnRate['isAu'] = false
-        }
+        } */
       }
 
       // d払い
@@ -296,6 +317,7 @@ export default {
 
       console.log(this.usePayAndReturnRate)
       this.$localStorage.set('usePayAndReturnRate', JSON.stringify(this.usePayAndReturnRate))
+      this.saveData()
     }
   }
 }
