@@ -265,15 +265,15 @@ export default {
 
       // d払い
       if (this.dPay) {
-        this.usePayAndReturnRate['dPay'] = 0.5
+        this.usePayAndReturnRate['d払い'] = 0.5
         if (this.dPayCredit === 'ポイント利用のみ') {
-          this.usePayAndReturnRate['dPay'] = 0.5
+          this.usePayAndReturnRate['d払い'] = 0.5
         }
         if (this.dPayCredit === '0.5%') {
-          this.usePayAndReturnRate['dPay'] += 0.5
+          this.usePayAndReturnRate['d払い'] += 0.5
         }
         if (this.dPayCredit === '1%') {
-          this.usePayAndReturnRate['dPay'] += 1
+          this.usePayAndReturnRate['d払い'] += 1
         }
       }
 
