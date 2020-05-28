@@ -8,7 +8,7 @@
             <p class="none">{{sortPayAndReturnRate[0].name}}</p>
             <p>還元率<span>{{sortPayAndReturnRate[0].rate}}％</span></p>
           </div>
-        <a class="clear_button"><p class="button_naka">paypayを使う</p></a>
+        <a class="clear_button" v-bind:href="sortPayAndReturnRate[0].link"><p class="button_naka">paypayを使う</p></a>
       </div>
     </div><!--おすすめ終了-->
     <section class="wrapwarap"><!--決済比較マン-->
