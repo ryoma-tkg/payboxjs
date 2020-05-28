@@ -205,6 +205,26 @@ export default {
 
       this.$localStorage.set('save', JSON.stringify(save))
     },
+    loadData: function () {
+      let save = this.$localStorage.get('save')
+      save = JSON.parse(save)
+      this.creditcard = save['creditcard']
+      this.creditcardCredit = save['creditcardCredit']
+      this.paypayMoney = save['paypayMoney']
+      this.visaLinePay = save['visaLinePay']
+      this.linePay = save['linePay']
+      this.lineRank = save['lineRank']
+      this.rakutenPay = save['rakutenPay']
+      this.rakutenPayCredit = save['rakutenPayCredit']
+      this.auPay = save['auPay']
+      this.auPayCredit = save['auPayCredit']
+      this.isAu = save['isAu']
+      this.dPay = save['dPay']
+      this.dPayCredit = save['dPayCredit']
+      this.meruPay = save['meruPay']
+      this.kyash = save['kyash']
+      this.kyash_credit = save['kyash_credit']
+    },
     register: function () {
       // 初期化
       this.usePayAndReturnRate = {}
