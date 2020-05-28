@@ -203,6 +203,7 @@ export default {
     },
     Clear: function () {
       this.keyword = ''
+      this.storelist = []
     },
     eating: function () {
       this.keyword = '食事'
