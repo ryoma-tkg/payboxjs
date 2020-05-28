@@ -22,8 +22,26 @@
 </template>
 
 <script>
+import isMobile from 'ismobilejs'
+
 export default {
-  name: 'App'
+  name: 'App',
+  beforeCreated () {
+    if (!isMobile.isAny) {
+      // スマホ or タブレットのでないときの処理
+      if (!location.href.match(/pr/)) {
+        this.$router.push('/pr')
+      }
+    }
+  },
+  befoerUpdate () {
+    if (!isMobile.isAny) {
+      // スマホ or タブレットのでないときの処理
+      if (!location.href.match(/pr/)) {
+        this.$router.push('/pr')
+      }
+    }
+  }
 }
 </script>
 
