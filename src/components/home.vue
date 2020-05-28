@@ -108,16 +108,9 @@ export default {
   methods: {
     nonSaveData: function () {
       console.log('this.$localStorage: ', this.$localStorage)
-      let localStorage
-      for (let i; i < 10; ++i) {
-        localStorage = this.$localStorage
-        if (localStorage !== undefined) {
-          break
-        }
-      }
-      let save = localStorage.get('save')
+      let save = this.$localStorage.get('save')
       console.log('save: ', save)
-      if (save === null) {
+      if (save || save === null) {
         this.$router.push('/manage_pay')
       }
     },
