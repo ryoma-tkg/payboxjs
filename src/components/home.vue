@@ -66,7 +66,9 @@ export default {
       sortPayAndReturnRate: Array(JSON.parse('{"name": "' + 'お店に入るとお得な決済方法を表示します' + '", ' + '"rate": ' + 0 + '}'))
     }
   },
-  created () {},
+  created () {
+    this.nonSaveData()
+  },
   mounted () {
     // axios.get('/payboxjs/static/campaign.json').then((response) => {
     //   console.log(response)
@@ -86,6 +88,17 @@ export default {
       })
   },
   methods: {
+    nonSaveData: function () {
+      console.log('this.$localStorage: ', this.$localStorage)
+      if (this.$localStorage === undefined) {
+        this.$router.push('/manage_pay')
+      }
+      let save = this.$localStorage.get('save')
+      console.log('save: ', save)
+      if (save === null) {
+        this.$router.push('/manage_pay')
+      }
+    },
     pulldown: function () {
       if (this.show === false) {
         this.show = true
