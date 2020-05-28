@@ -111,7 +111,8 @@ export default {
       let save = this.$localStorage.get('save')
       console.log('save: ', save)
       if (save || save === null) {
-        this.$router.push('/manage_pay')
+        // this.$router.push('/manage_pay')
+        this.$router.push('https://yosipy.github.io/payboxjs/#/manage_pay')
       }
     },
     pulldown: function () {
