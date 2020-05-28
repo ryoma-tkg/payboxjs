@@ -8,12 +8,13 @@
             <p>還元率<span>{{sortPayAndReturnRate[0].rate}}</span></p>
           </div>
         <button class="clear_button">ボタン</button>
+        <button @click="pulldown">▼</button>
       </div>
     </div><!--おすすめ終了-->
 
     <section class="wrapwarap"><!--決済比較マン-->
     <div class="hikaku"><!--決済比較マン-->
-      <ul>
+      <ul v-if="show">
         <li v-for="sparr in sortPayAndReturnRate.slice(1)" v-bind:key="sparr.name">
             <ul class="hi_naka">
                 <li><a class="clear_button"><img :src="sparr.imgPathSmall"/></a></li>
@@ -60,6 +61,7 @@ moment.locale('ja')
 export default {
   data () {
     return {
+      show: false,
       bestPayReturnRate: 0,
       sortPayAndReturnRate: Array(JSON.parse('{"name": "' + 'お店に入るとお得な決済方法を表示します' + '", ' + '"rate": ' + 0 + '}'))
     }
@@ -84,6 +86,13 @@ export default {
       })
   },
   methods: {
+    pulldown: function () {
+      if (this.show === false) {
+        this.show = true
+      } else {
+        this.show = false
+      }
+    },
     // GPS 取得
     getPosition: function () {
       return new Promise(function (resolve) {
