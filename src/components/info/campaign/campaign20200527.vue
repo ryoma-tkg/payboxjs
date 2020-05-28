@@ -28,7 +28,7 @@
 <script>
 </script>
 
-<style>
+<style scoped>
 .title{
   height: 100px;
   width: 100%;
