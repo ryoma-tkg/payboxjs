@@ -3,16 +3,20 @@
     <div>
       {{sortPayAndReturnRate[0].name}}
       {{sortPayAndReturnRate[0].rate}}
+      <img :src="sortPayAndReturnRate[0].imgPath"/>
     </div>
     <div>
       <ul>
         <li v-for="sparr in sortPayAndReturnRate.slice(1)" v-bind:key="sparr.name">
           {{sparr.name}}
+          <img :src="sparr.imgPath"/>
           {{sparr.rate}}
         </li>
       </ul>
     </div>
-    <p>他の決済手段</p>
+    <div>
+      <p>クイック起動</p>
+    </div>
     <p>お知らせキャンペーン</p>
   </div>
 </template>
@@ -25,7 +29,6 @@ moment.locale('ja')
 export default {
   data () {
     return {
-      bestPayKey: '',
       bestPayReturnRate: 0,
       sortPayAndReturnRate: Array(JSON.parse('{"name": "' + 'お店に入るとお得な決済方法を表示します' + '", ' + '"rate": ' + 0 + '}'))
     }
@@ -172,10 +175,31 @@ export default {
             ++i
           }
           this.sortPayAndReturnRate.sort(this.comparePay)
+
+          // add img path
+          for (let sparr in this.sortPayAndReturnRate) {
+            console.log('sparr', sparr)
+            if (this.sortPayAndReturnRate[sparr]['name'] === 'クレジットカード') {
+              this.sortPayAndReturnRate[sparr]['imgPath'] = '../../static/test/kessai/card.svg'
+            } else if (this.sortPayAndReturnRate[sparr]['name'] === 'PayPay(現金チャージ)') {
+              this.sortPayAndReturnRate[sparr]['imgPath'] = '../../static/test/kessai/paypay.svg'
+            } else if (this.sortPayAndReturnRate[sparr]['name'] === 'visa LINE Payカード') {
+              this.sortPayAndReturnRate[sparr]['imgPath'] = '../../static/test/kessai/visa_line.svg'
+            } else if (this.sortPayAndReturnRate[sparr]['name'] === 'LINE Pay') {
+              this.sortPayAndReturnRate[sparr]['imgPath'] = '../../static/test/kessai/line.svg'
+            } else if (this.sortPayAndReturnRate[sparr]['name'] === '楽天Pay') {
+              this.sortPayAndReturnRate[sparr]['imgPath'] = '../../static/test/kessai/r.svg'
+            } else if (this.sortPayAndReturnRate[sparr]['name'] === 'auPay') {
+              this.sortPayAndReturnRate[sparr]['imgPath'] = '../../static/test/kessai/au.svg'
+            } else if (this.sortPayAndReturnRate[sparr]['name'] === 'd払い') {
+              this.sortPayAndReturnRate[sparr]['imgPath'] = '../../static/test/kessai/d.svg'
+            } else if (this.sortPayAndReturnRate[sparr]['name'] === 'メルペイ') {
+              this.sortPayAndReturnRate[sparr]['imgPath'] = '../../static/test/kessai/mel.svg'
+            } else if (this.sortPayAndReturnRate[sparr]['name'] === 'Kyash Card') {
+              this.sortPayAndReturnRate[sparr]['imgPath'] = '../../static/test/kessai/kyash.svg'
+            }
+          }
           console.log('sortPayAndReturnRate', this.sortPayAndReturnRate)
-          this.bestPayKey = this.bestPay(usePayAndReturnRate)
-          this.bestPayReturnRate = usePayAndReturnRate[this.bestPayKey]
-          console.log('bestPayKey', this.bestPayKey, ': ', this.bestPayReturnRate)
         })
       } catch (error) {
         console.log('例外をキャッチしたよ！')
