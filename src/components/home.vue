@@ -45,22 +45,17 @@
         <ul class="carousel">
           <li>
             <router-link to="/info/recommend/recommend20200527" class="recommend-entry">
-              <img src="../../static/test/47365_main.jpg" class="recommend-img" />
+              <img src="../../static/test/pr/47365_main.jpg" class="recommend-img" />
             </router-link>
           </li>
           <li>
             <a href="/" class="recommend-entry">
-              <img src="../../static/test/47365_main.jpg" class="recommend-img" />
+              <img src="../../static/test/pr/gekiatsu.jpg" class="recommend-img" />
             </a>
           </li>
           <li>
             <a href="/" class="recommend-entry">
-              <img src="../../static/test/47365_main.jpg" class="recommend-img" />
-            </a>
-          </li>
-          <li>
-            <a href="/" class="recommend-entry">
-              <img src="../../static/test/47365_main.jpg" class="recommend-img" />
+              <img src="../../static/test/pr/pie.jpg" class="recommend-img" />
             </a>
           </li>
         </ul>
