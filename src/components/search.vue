@@ -127,21 +127,16 @@ export default {
   },
   methods: {
     getStoreList: function () {
-      console.log(this.storelist)
       return this.storelist
     },
     filteredStores: function (stores) {
       this.storelist = []
-      // console.log(stores)
       for (var i in stores) {
         var store = stores[i]
-        // console.log(store)
         if ((store.name.indexOf(this.keyword) !== -1 || store.category_name.indexOf(this.keyword) !== -1) && this.keyword !== '') {
           this.storelist.push(store)
-          // console.log(storelist)
         }
       }
-      console.log(this.storelist)
     },
     // 検索用
     searchStores: async function (latitude, longitude) {
@@ -171,10 +166,7 @@ export default {
         stores.sort(compare)
         console.log('stores: ', stores)
 
-        var storelist = []
-        storelist = this.filteredStores(stores)
-        console.log('searchstorelist' + storelist)
-        return storelist
+        this.filteredStores(stores)
       } catch (error) {
         console.log('例外をキャッチしたよ！')
         console.error(error)
@@ -192,10 +184,7 @@ export default {
           let longitude = position.coords.longitude
           console.log(latitude, ', ', longitude)
           // nearStoresList(latitude, longitude)
-          var storelist = []
-          storelist = this.searchStores(latitude, longitude)
-          console.log(storelist)
-          return storelist
+          this.searchStores(latitude, longitude)
         })
         .catch((err) => {
           console.error(err.message)
