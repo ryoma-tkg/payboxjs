@@ -375,8 +375,8 @@ export default {
 }
 .pay_m li{
   text-align: center;
-  margin:10px 0 10px 0;
-  background: #FFF;
+  margin:10px auto 10px auto;
+  background: transparent;
   list-style: none;
   height: 60px;
 }
@@ -435,25 +435,26 @@ export default {
   box-shadow: none;
   -webkit-appearance: none;
   appearance: none;
-  border:solid 2px #696969
+  border:solid 2px #696969;
+  z-index: 50;
 }
 
 .pay_m .yajirusi::before {
   content: "";
-  display: block;
+  display: inline-block;
   border-color: #696969 transparent transparent transparent;
   border-style: solid;
   border-width: 10px 8px 0 8px;
   position: absolute;
   border-radius: 3px;
-  margin-top: 24px;
+  margin-top: 25px;
   left: 315px;
-  z-index: 1000;
+  z-index: 100;
 }
 
 .pay_m .yajirusi_aup::before {
   content: "";
-  display: block;
+  display: inline-block;
   border-color: #696969 transparent transparent transparent;
   border-style: solid;
   border-width: 10px 8px 0 8px;
@@ -461,7 +462,7 @@ export default {
   border-radius: 3px;
   margin-top: 7px;
   left: 160px;
-  z-index: 1000;
+  z-index: 100;
 }
 
 .pay_m select.aus{
@@ -540,20 +541,70 @@ export default {
       left: 355px;
     }
 
-.pay_m .yajirusi_aup::before {
-      left: 200px;
-    }
+    .pay_m .yajirusi_aup::before {
+          left: 200px;
+        }
 }
 
 @media screen and (min-width:414px) {
     /*画面サイズが480pxからはここを読み込む*/
 
     .pay_m .yajirusi::before {
-      left: 355px;
+      left: 350px;
     }
 
     .pay_m .yajirusi_aup::before {
       left: 200px;
+    }
+}
+
+@media screen and (min-width:415px) and (max-width:640px) {
+
+    .pay_m .yajirusi::before {
+      left: 90%;
+    }
+
+    .pay_m .yajirusi_aup::before {
+      left: 65%;
+    }
+
+    .pay_m select{
+      right: 9.5%;
+    }
+
+    .pay_m select.aus{
+      right: 38%;
+    }
+    .pay_m select.aus_2{
+      right: 9.5%;
+    }
+    .pay_m select.line_s{
+      right: 9.5%;
+    }
+}
+
+@media screen and (min-width:640px)  and (max-width:1200px) {
+
+    .pay_m .yajirusi::before {
+      left: 87%;
+    }
+
+    .pay_m .yajirusi_aup::before {
+      left: 73%;
+    }
+
+    .pay_m select{
+      right: 9.5%;
+    }
+
+    .pay_m select.aus{
+      right: 32%;
+    }
+    .pay_m select.aus_2{
+      right: 9.5%;
+    }
+    .pay_m select.line_s{
+      right: 9.5%;
     }
 }
 
