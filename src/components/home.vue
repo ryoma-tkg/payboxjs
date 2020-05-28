@@ -120,32 +120,32 @@ export default {
 
         // add img path Big and Small
         if (tmp['name'] === 'クレジットカード') {
-          tmp['imgPathBig'] = '../../static/test/home_kessai/card.svg'
-          tmp['imgPathSmall'] = '../../static/test/kessai/card.svg'
+          tmp['imgPathBig'] = './static/test/home_kessai/card.svg'
+          tmp['imgPathSmall'] = './static/test/kessai/card.svg'
         } else if (tmp['name'] === 'PayPay(現金チャージ)') {
           tmp['imgPathBig'] = './static/test/home_kessai/paypay.svg'
           tmp['imgPathSmall'] = './static/test/kessai/paypay.svg'
         } else if (tmp['name'] === 'visa LINE Payカード') {
-          tmp['imgPathBig'] = '../../static/test/home_kessai/visa_line.svg'
-          tmp['imgPathSmall'] = '../../static/test/kessai/visa_line.svg'
+          tmp['imgPathBig'] = './static/test/home_kessai/visa_line.svg'
+          tmp['imgPathSmall'] = './static/test/kessai/visa_line.svg'
         } else if (tmp['name'] === 'LINE Pay') {
-          tmp['imgPathBig'] = '../../static/test/home_kessai/line.svg'
-          tmp['imgPathSmall'] = '../../static/test/kessai/line.svg'
+          tmp['imgPathBig'] = './static/test/home_kessai/line.svg'
+          tmp['imgPathSmall'] = './static/test/kessai/line.svg'
         } else if (tmp['name'] === '楽天Pay') {
-          tmp['imgPathBig'] = '../../static/test/home_kessai/r.svg'
-          tmp['imgPathSmall'] = '../../static/test/kessai/r.svg'
+          tmp['imgPathBig'] = './static/test/home_kessai/r.svg'
+          tmp['imgPathSmall'] = './static/test/kessai/r.svg'
         } else if (tmp['name'] === 'auPay') {
-          tmp['imgPathBig'] = '../../static/test/home_kessai/au.svg'
-          tmp['imgPathSmall'] = '../../static/test/kessai/au.svg'
+          tmp['imgPathBig'] = './static/test/home_kessai/au.svg'
+          tmp['imgPathSmall'] = './static/test/kessai/au.svg'
         } else if (tmp['name'] === 'd払い') {
-          tmp['imgPathBig'] = '../../static/test/home_kessai/d.svg'
-          tmp['imgPathSmall'] = '../../static/test/kessai/d.svg'
+          tmp['imgPathBig'] = './static/test/home_kessai/d.svg'
+          tmp['imgPathSmall'] = './static/test/kessai/d.svg'
         } else if (tmp['name'] === 'メルペイ') {
-          tmp['imgPathBig'] = '../../static/test/home_kessai/mel.svg'
-          tmp['imgPathSmall'] = '../../static/test/kessai/mel.svg'
+          tmp['imgPathBig'] = './static/test/home_kessai/mel.svg'
+          tmp['imgPathSmall'] = './static/test/kessai/mel.svg'
         } else if (tmp['name'] === 'Kyash Card') {
-          tmp['imgPathBig'] = '../../static/test/home_kessai/kyash.svg'
-          tmp['imgPathSmall'] = '../../static/test/kessai/kyash.svg'
+          tmp['imgPathBig'] = './static/test/home_kessai/kyash.svg'
+          tmp['imgPathSmall'] = './static/test/kessai/kyash.svg'
         }
 
         usePayAndReturnRate[uparr] = tmp
