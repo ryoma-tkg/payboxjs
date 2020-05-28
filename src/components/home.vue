@@ -4,13 +4,16 @@
       {{sortPayAndReturnRate[0].name}}
       {{sortPayAndReturnRate[0].rate}}
       <img :src="sortPayAndReturnRate[0].imgPath"/>
+      <button class="clear_button">ボタン</button>
     </div>
     <div>
       <ul>
         <li v-for="sparr in sortPayAndReturnRate.slice(1)" v-bind:key="sparr.name">
+          <button class="clear_button">
           {{sparr.name}}
           <img :src="sparr.imgPath"/>
           {{sparr.rate}}
+          </button>
         </li>
       </ul>
     </div>
