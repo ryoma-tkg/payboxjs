@@ -1,8 +1,16 @@
 <template>
   <div>
     <div>
-      {{bestPayKey}}
-      {{bestPayReturnRate}}
+      {{sortPayAndReturnRate[0].name}}
+      {{sortPayAndReturnRate[0].rate}}
+    </div>
+    <div>
+      <ul>
+        <li v-for="sparr in sortPayAndReturnRate.slice(1)" v-bind:key="sparr.name">
+          {{sparr.name}}
+          {{sparr.rate}}
+        </li>
+      </ul>
     </div>
     <p>他の決済手段</p>
     <p>お知らせキャンペーン</p>
@@ -19,14 +27,14 @@ export default {
     return {
       bestPayKey: '',
       bestPayReturnRate: 0,
-      sortPayAndReturnRate: undefined
+      sortPayAndReturnRate: Array(JSON.parse('{"name": "' + 'お店に入るとお得な決済方法を表示します' + '", ' + '"rate": ' + 0 + '}'))
     }
   },
   created () {},
   mounted () {
-    axios.get('/payboxjs/static/campaign.json').then((response) => {
-      console.log(response)
-    })
+    // axios.get('/payboxjs/static/campaign.json').then((response) => {
+    //   console.log(response)
+    // })
 
     this.getPosition()
       .then((position) => {
