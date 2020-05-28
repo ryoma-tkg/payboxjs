@@ -11,38 +11,44 @@
       </div>
     </div><!--おすすめ終了-->
 
+    <section class="wrapwarap"><!--決済比較マン-->
     <div class="hikaku"><!--決済比較マン-->
       <ul>
         <li v-for="sparr in sortPayAndReturnRate.slice(1)" v-bind:key="sparr.name">
-          <button class="clear_button">
-          <ul class="hi_naka">
-              <li><img :src="sparr.imgPathSmall"/></li>
-              <li><p>{{sparr.name}}</p></li>
-              <li><p>{{sparr.rate}}</p></li>
-          </ul>
-          </button>
+            <ul class="hi_naka">
+                <li><a class="clear_button"><img :src="sparr.imgPathSmall"/></a></li>
+                <li><a class="clear_button"><p>{{sparr.name}}</p></a></li>
+                <li><a class="clear_button"><p>{{sparr.rate}}</p></a></li>
+            </ul>
         </li>
+        <!--<li><div class="lines"></div></li>-->
       </ul>
-      <div class="open">
+    </div><!--決済比較終わり-->
+        <div class="open">
         <input type="checkbox" id="hika_ako">
         <label for="hika_ako">
           <span id="na_info">開く</span>
         </label>
       </div>
-    </div><!--決済比較終わり-->
-    <div>
-      <p>クイック起動</p>
+    </section><!--決済比較終わり-->
+    <div class="quick">
+      <h3>クイック起動</h3>
       <ul>
         <li v-for="sparr in sortPayAndReturnRate" v-bind:key="sparr.name">
           <a class="clear_button" v-bind:href="sparr.link">
-          {{sparr.name}}
+          <!--{{sparr.name}}-->
           <img :src="sparr.imgPathSmall"/>
-          {{sparr.rate}}
+          <!--{{sparr.rate}}-->
           </a>
         </li>
       </ul>
     </div>
-    <p>お知らせキャンペーン</p>
+    <div class="clearfix"></div>
+    <div class="prpr">
+      <h3>お知らせキャンペーン</h3>
+    </div>
+
+    <div class="speacing"></div>
   </div>
 </template>
 
@@ -278,12 +284,18 @@ export default {
   }
 }
 </script>
-<!--
 <style scoped>
 *{
   margin: 0;
   padding: 0;
 }
+
+.clearfix::after {
+   content: "";
+  display: block;
+  clear: both;
+}
+
 /*おすすめ */
 
 .osusume{
@@ -358,8 +370,17 @@ export default {
 /*決済比較 */
 
 .hikaku{
+  padding-top:50px;
   z-index: 1;
   overflow: hidden;
+  padding-bottom: 50px;
+}
+
+.wrapwarap{
+  -webkit-box-shadow: 0px 5px 15px 0px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: 0px 5px 15px 0px rgba(0, 0, 0, 0.5);
+  box-shadow: 0px 5px 15px 0px rgba(0, 0, 0, 0.5);
+  border-radius: 0 0 20px 20px;
 }
 
 .hikaku ul li:not(.hi_naka) {
@@ -408,47 +429,52 @@ export default {
 }
 */
 
+a.clear_button{
+  display: block;
+  border:solid 1px #696969;
+  margin:20px 0 30px 0;
+  width: 100%;
+  height: 70px;
+}
+
 .hi_naka{
 }
 
-.clear_button .hi_naka ul li{
+.hi_naka ul li{
   width: 100%;
   list-style: none;
 }
 
-.clear_button .hi_naka li:nth-child(1){
-  width: 15%;
+.hi_naka li:nth-child(1){
+  width: 20%;
   float: left;
-  padding:5px 5px 5px 10px;
 }
 
-.clear_button .hi_naka li:nth-child(2){
-  width: 50%;
+.hi_naka li:nth-child(2){
+  width: 60%;
   float: left;
-  padding:27px 0 0 20px;
   font-size:4.2vmin;
 }
 
-.clear_button .hi_naka li:nth-child(3){
-  width: 15%;
+.hi_naka li:nth-child(3){
+  width: 20%;
   float: left;
-  padding-top:31px;
 }
 
-.clear_button .hi_naka li img{
+.hi_naka  li a img{
   width: 65px;
   border: none;
 }
 
-.hikaku button.clear_button{
-  width: 100%;
-  height: 80px;
+.hikaku a.clear_button ul li img{
+  width: 70px;
   border:none;
 }
 
 /*開く閉じる*/
 .open input{
   display: none;
+  border-radius: 0 0 20px 20px;
 }
 
 .open label{
@@ -472,4 +498,62 @@ export default {
   background: red;
 }
 
-</style>-->
+.lines{
+  width: 80%;
+  height: 2px;
+  background: #696969;
+}
+
+.quick{
+  all:unset;
+  margin-top: 30px;
+  width: 80%;
+}
+
+.quick a{
+  all:unset;
+}
+
+.quick ul li{
+
+}
+
+.quick ul{
+  width: 80%;
+  margin:0 auto;
+}
+
+.quick li{
+  width: 75px;
+  display: inline-block;
+  text-align: center;
+  float:left;
+  margin-bottom: 10px;
+}
+
+.quick li img{
+  width: 60px;
+  border-radius: 100px;
+  -webkit-box-shadow: 0px 5px 15px 0px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: 0px 5px 15px 0px rgba(0, 0, 0, 0.5);
+  box-shadow: 0px 5px 15px 0px rgba(0, 0, 0, 0.5);
+}
+
+h3{
+  color: #505050;
+  font-size: 16px;
+  text-align: left;
+  width: 80%;
+  margin: 20px auto 20px auto;
+}
+
+.prpr p{
+  all:unset;
+  clear: both;
+}
+
+.speacing{
+  margin-bottom: 200px;
+}
+
+</style>
