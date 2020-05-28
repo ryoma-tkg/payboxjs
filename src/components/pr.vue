@@ -265,7 +265,7 @@ _::-webkit-full-page-media, _:future, :root .header {
   font-weight: 600;
   background-color: rgba(00, 00, 00, 0.5);
 
-  pointer-events: none;
+  /*pointer-events: none;*/
 
   transition:all 0.3s ease;
 }

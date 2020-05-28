@@ -1,24 +1,35 @@
 <template>
   <div>
-    <div class="osusume">
+    <div class="osusume"><!--おすすめ-->
       <div class="os_naka">
-        {{sortPayAndReturnRate[0].name}}
-        {{sortPayAndReturnRate[0].rate}}
         <img :src="sortPayAndReturnRate[0].imgPathBig"/>
+          <div class="os_article">
+            <p class="none">{{sortPayAndReturnRate[0].name}}</p>
+            <p>還元率<span>{{sortPayAndReturnRate[0].rate}}</span></p>
+          </div>
         <button class="clear_button">ボタン</button>
       </div>
-    </div>
-    <div>
+    </div><!--おすすめ終了-->
+
+    <div class="hikaku"><!--決済比較マン-->
       <ul>
         <li v-for="sparr in sortPayAndReturnRate.slice(1)" v-bind:key="sparr.name">
           <button class="clear_button">
-          {{sparr.name}}
-          <img :src="sparr.imgPathSmall"/>
-          {{sparr.rate}}
+          <ul class="hi_naka">
+              <li><img :src="sparr.imgPathSmall"/></li>
+              <li><p>{{sparr.name}}</p></li>
+              <li><p>{{sparr.rate}}</p></li>
+          </ul>
           </button>
         </li>
       </ul>
-    </div>
+      <div class="open">
+        <input type="checkbox" id="hika_ako">
+        <label for="hika_ako">
+          <span id="na_info">開く</span>
+        </label>
+      </div>
+    </div><!--決済比較終わり-->
     <div>
       <p>クイック起動</p>
       <ul>
@@ -274,14 +285,22 @@ export default {
   padding: 0;
 }
 
+/*おすすめ */
+
 .osusume{
   margin: -60px auto 10px auto;
   padding:40px 0 20px 0;
   width: 100%;
   height: 230px;
   background: red;
+  position: relative;
 
   border-radius: 0 0 20px 20px;
+  z-index: 9000;
+
+  -webkit-box-shadow: 0px 5px 30px 0px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: 0px 5px 30px 0px rgba(0, 0, 0, 0.5);
+  box-shadow: 0px 5px 30px 0px rgba(0, 0, 0, 0.5);
 }
 
 .osusume img{
@@ -290,7 +309,7 @@ export default {
 }
 
 .osusume button{
-  margin: 20px auto 0 auto;
+  margin: 10px auto 0 auto;
   display: inline-block;
   width: 60%;
   height: 40px;
@@ -303,15 +322,155 @@ export default {
 
 .osusume button::after{
   text-align: center;
-  width: 104%;
-  height: 48px;
+  width: 103%;
+  height: 46px;
   content:"";
   display: block;
   position: relative;
-  bottom: 38px;
-  right: 8px;
+  bottom: 36px;
+  right: 6px;
   border-radius: 50px;
-  border:solid 3px #FFF;
+  border:solid 2px #FFF;
+}
+
+.osusume div.os_naka{
+  position: relative;
+  bottom: -30px;
+}
+
+.os_article p{
+  background-color: transparent;
+  min-width: 10%;
+  margin:7px auto 7px auto;
+  min-width: 70px;
+  width: 40%;
+  padding:5px;
+
+  border-radius: 50px;
+  border:solid 2px #FFF;
+  font-weight: 700;
+  color:white;
+}
+
+.none{
+  display: none;
+}
+
+/*決済比較 */
+
+.hikaku{
+  z-index: 1;
+  overflow: hidden;
+}
+
+.hikaku ul li:not(.hi_naka) {
+  list-style: none;
+}
+
+.hikaku ul:not(.hi_naka) {
+  width: 100%;
+}
+
+.hikaku li:not(.hi_naka) {
+  margin: 0 auto;
+  width: 80%;
+  height: 80px;
+}
+
+/*
+.hikaku ul {
+  background-color: teal;
+}
+
+.hikaku li {
+  list-style: none;
+  margin: 0 auto;
+  width: 85%;
+  height: 80px;
+  background-color: tomato;
+}
+
+.hikaku li p{
+  display: inline-block;
+  font-size: 20px;
+}
+
+.hikaku li button{
+  padding:8px;
+  width: 100%;
+  height: 100%;
+  border: none;
+  text-align: left;
+}
+
+.hikaku li img{
+  width: 65px;
+  border: none;
+}
+*/
+
+.hi_naka{
+}
+
+.clear_button .hi_naka ul li{
+  width: 100%;
+  list-style: none;
+}
+
+.clear_button .hi_naka li:nth-child(1){
+  width: 15%;
+  float: left;
+  padding:5px 5px 5px 10px;
+}
+
+.clear_button .hi_naka li:nth-child(2){
+  width: 50%;
+  float: left;
+  padding:27px 0 0 20px;
+  font-size:4.2vmin;
+}
+
+.clear_button .hi_naka li:nth-child(3){
+  width: 15%;
+  float: left;
+  padding-top:31px;
+}
+
+.clear_button .hi_naka li img{
+  width: 65px;
+  border: none;
+}
+
+.hikaku button.clear_button{
+  width: 100%;
+  height: 80px;
+  border:none;
+}
+
+/*開く閉じる*/
+.open input{
+  display: none;
+}
+
+.open label{
+  display: block;
+  height: 50px;
+  background: tomato;
+  border-radius: 0 0 20px 20px;
+}
+
+.open input:checked + label{
+  font-size: 0px;
+}
+
+.open input:checked + label::before{
+  font-size: 16px;
+  content:"とじる";
+}
+
+.open input:checked ~ .hikaku{
+  bottom:100px;
+  background: red;
 }
 
 </style>
