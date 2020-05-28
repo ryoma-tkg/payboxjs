@@ -1,7 +1,8 @@
 <template>
   <div>
     <div>
-
+      {{bestPayKey}}
+      {{bestPayReturnRate}}
     </div>
     <p>他の決済手段</p>
     <p>お知らせキャンペーン</p>
@@ -17,7 +18,8 @@ export default {
   data () {
     return {
       bestPayKey: '',
-      bestPayReturnRate: 0
+      bestPayReturnRate: 0,
+      sortPayAndReturnRate: undefined
     }
   },
   created () {},
@@ -53,6 +55,17 @@ export default {
         r = -1
       } else {
         // if ( a['distance'] > b['distance'] )
+        r = 1
+      }
+      return r
+    },
+    // Payソート用比較関数
+    comparePay: function (a, b) {
+      let r = 0
+      if (a['rate'] > b['rate']) {
+        r = -1
+      } else {
+        // if ( a['rate'] < b['rate'] )
         r = 1
       }
       return r
@@ -143,7 +156,15 @@ export default {
             }
           }
 
-          // 一番お得なPay
+          // sort Pay
+          this.sortPayAndReturnRate = Array(usePayAndReturnRate.length)
+          let i = 0
+          for (let uparrKey in usePayAndReturnRate) {
+            this.sortPayAndReturnRate[i] = JSON.parse('{"name": "' + uparrKey + '", ' + '"rate": ' + String(usePayAndReturnRate[uparrKey]) + '}')
+            ++i
+          }
+          this.sortPayAndReturnRate.sort(this.comparePay)
+          console.log('sortPayAndReturnRate', this.sortPayAndReturnRate)
           this.bestPayKey = this.bestPay(usePayAndReturnRate)
           this.bestPayReturnRate = usePayAndReturnRate[this.bestPayKey]
           console.log('bestPayKey', this.bestPayKey, ': ', this.bestPayReturnRate)
