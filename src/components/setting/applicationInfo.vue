@@ -8,6 +8,9 @@
     <div class="wrap">
     <div class="top_speas"></div>
     <div class="koumoku">
+      <img src="../../../static/test/icons/t.png" alt="">
+    </div>
+    <div class="koumoku">
       <p>「paybox」は決済手段を包括的に管理し、直感的にお支払方法を決定できるようにするアプリです。</p>
       <p>  お客様の位置情報をもとに、お支払先の店舗を割り出し最もお得なお支払方法を瞬時にお伝えします。</p>
       <p> また、店舗検索機能も実装しており、お得にご利用できるお店を検索することもできます。</p>
@@ -112,6 +115,10 @@
 
 .koumoku h2{
    margin-bottom: 10px;
+}
+
+.koumoku img{
+  width: 60%;
 }
 
 .bottom_speas{

@@ -216,6 +216,11 @@ export default {
   padding: 0;
 }
 
+::-webkit-scrollbar {
+      display: none;
+      -webkit-appearance: none;
+}
+
 .wrap_all{
   width: 100%;
   margin:0 auto;

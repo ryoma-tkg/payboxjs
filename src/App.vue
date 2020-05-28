@@ -71,6 +71,10 @@ export default {
     padding:0px;
   }
 
+  .container::-webkit-scrollbar {
+    display:none;
+}
+
   #footer{
       height:60px;
       width: 100%;

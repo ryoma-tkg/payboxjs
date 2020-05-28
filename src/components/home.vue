@@ -2,16 +2,15 @@
   <div>
     <div class="osusume"><!--おすすめ-->
       <div class="os_naka">
+        <h2>現在のおすすめ決済</h2>
         <img :src="sortPayAndReturnRate[0].imgPathBig"/>
           <div class="os_article">
             <p class="none">{{sortPayAndReturnRate[0].name}}</p>
-            <p>還元率<span>{{sortPayAndReturnRate[0].rate}}</span></p>
+            <p>還元率<span>{{sortPayAndReturnRate[0].rate}}％</span></p>
           </div>
-        <button class="clear_button">ボタン</button>
-        <button @click="pulldown">▼</button>
+        <button class="clear_button"><p class="button_naka">paypayを使う</p></button>
       </div>
     </div><!--おすすめ終了-->
-
     <section class="wrapwarap"><!--決済比較マン-->
     <div class="hikaku"><!--決済比較マン-->
       <ul v-if="show">
@@ -22,18 +21,13 @@
                 <li><a class="clear_button"><p>還元率<br><span>{{sparr.rate}}</span>％</p></a></li>
             </ul>
         </li>
-        <!--<li><div class="lines"></div></li>-->
       </ul>
     </div><!--決済比較終わり-->
-        <div class="open">
-        <input type="checkbox" id="hika_ako">
-        <label for="hika_ako">
-          <span id="na_info">開く</span>
-        </label>
-      </div>
+    <button @click="pulldown" id="pulldown"><p>他の決済と比較する</p></button>
     </section><!--決済比較終わり-->
+    <div class="sukima"></div>
     <div class="quick">
-      <h3>クイック起動</h3>
+      <h3 class="kik" ><font color="#505050">クイック起動</font></h3>
       <ul>
         <li v-for="sparr in sortPayAndReturnRate" v-bind:key="sparr.name">
           <a class="clear_button" v-bind:href="sparr.link">
@@ -326,7 +320,6 @@ export default {
   padding:40px 0 20px 0;
   width: 100%;
   height: 230px;
-  background: red;
   position: relative;
 
   border-radius: 0 0 20px 20px;
@@ -335,6 +328,14 @@ export default {
   -webkit-box-shadow: 0px 5px 30px 0px rgba(0, 0, 0, 0.5);
   -moz-box-shadow: 0px 5px 30px 0px rgba(0, 0, 0, 0.5);
   box-shadow: 0px 5px 30px 0px rgba(0, 0, 0, 0.5);
+
+  /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#ff839b+0,fe0133+100 */
+  background: #ff839b; /* Old browsers */
+  background: -moz-linear-gradient(top,  #ff839b 0%, #fe0133 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top,  #ff839b 0%,#fe0133 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom,  #ff839b 0%,#fe0133 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff839b', endColorstr='#fe0133',GradientType=0 ); /* IE6-9 */
+
 }
 
 .osusume img{
@@ -345,31 +346,53 @@ export default {
 .osusume button{
   margin: 10px auto 0 auto;
   display: inline-block;
-  width: 60%;
+  width: 75%;
   height: 40px;
   border-radius: 50px;
   border: none;
   background-color: #FFF;
-  padding-top: 10px;
+  padding-top: 2px;
 
 }
 
 .osusume button::after{
   text-align: center;
-  width: 103%;
+  width: 102%;
   height: 46px;
   content:"";
   display: block;
   position: relative;
-  bottom: 36px;
-  right: 6px;
+  bottom: 37px;
+  right: 5px;
   border-radius: 50px;
   border:solid 2px #FFF;
 }
 
+.button_naka{/*決済によって色が変わるよ*/
+      font-size: 20px;
+      font-weight: 700;
+      color: #C70027;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+    _::-webkit-full-page-media, _:future, .osusume button::after {
+      bottom: 33px;
+      right: 5px;
+    }
+    _::-webkit-full-page-media, _:future, .osusume button{/*決済によって色が変わるよ*/
+      padding-top: 5px;
+    }
+}
+
 .osusume div.os_naka{
   position: relative;
-  bottom: -30px;
+  bottom: -10px;
+}
+
+.os_naka h2{
+  font-size: 18px;
+  color: #FFF;
+  margin-bottom: 10px;
 }
 
 .os_article p{
@@ -393,17 +416,33 @@ export default {
 /*決済比較 */
 
 .hikaku{
-  padding-top:50px;
+  padding-top:60px;
   z-index: 1;
-  overflow: hidden;
-  padding-bottom: 50px;
+  transition:all 0.3 ease;
 }
 
 .wrapwarap{
+  position: relative;
+  top: -60px;
   -webkit-box-shadow: 0px 5px 15px 0px rgba(0, 0, 0, 0.5);
   -moz-box-shadow: 0px 5px 15px 0px rgba(0, 0, 0, 0.5);
   box-shadow: 0px 5px 15px 0px rgba(0, 0, 0, 0.5);
   border-radius: 0 0 20px 20px;
+
+  transition:all 0.3 ease;
+}
+button#pulldown{
+  width: 100%;
+  height: 45px;
+  border-radius: 0 0 20px 20px;
+  border: none;
+  background: #FFF;
+}
+
+button#pulldown p{
+  font-size: 16px;
+  font-weight: 700;
+  color: #626262;
 }
 
 .hikaku ul li:not(.hi_naka) {
@@ -520,33 +559,6 @@ ul.hi_naka{
   border:none;
 }
 
-/*開く閉じる*/
-.open input{
-  display: none;
-  border-radius: 0 0 20px 20px;
-}
-
-.open label{
-  display: block;
-  height: 50px;
-  background: tomato;
-  border-radius: 0 0 20px 20px;
-}
-
-.open input:checked + label{
-  font-size: 0px;
-}
-
-.open input:checked + label::before{
-  font-size: 16px;
-  content:"とじる";
-}
-
-.open input:checked ~ .hikaku{
-  bottom:100px;
-  background: red;
-}
-
 .lines{
   width: 80%;
   height: 2px;
@@ -555,8 +567,6 @@ ul.hi_naka{
 
 .quick{
   all:unset;
-  margin-top: 30px;
-  width: 80%;
 }
 
 .quick a{
@@ -588,12 +598,20 @@ ul.hi_naka{
   box-shadow: 0px 5px 15px 0px rgba(0, 0, 0, 0.5);
 }
 
+.kik{
+  color: #505050;
+}
+
 h3{
   color: #505050;
   font-size: 16px;
   text-align: left;
   width: 80%;
-  margin: 20px auto 20px auto;
+  margin: 10px auto 10px auto;
+}
+
+.sukima{
+  margin-top: -40px;
 }
 
 .prpr p{
