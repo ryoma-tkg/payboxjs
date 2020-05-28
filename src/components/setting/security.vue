@@ -12,7 +12,7 @@
       <span class="slider round"></span>
     </label>
     <p>※位置情報サービスは、お客様の位置を取得し、</p>
-    <p>今いるお店や周辺のお店を割り出すことにのみ使われます。</p>
+    <p>今いるお店や周辺のお店を<br>検出するときのみ使用されます。</p>
     <h2 class="settlement">決済情報取り扱いに関して</h2>
     <p class="explanation">本アプリは決済手段の種類のみを取得しており、</p>
     <p class="explanation">お客様の決済情報は一切取得しておりません。</p>

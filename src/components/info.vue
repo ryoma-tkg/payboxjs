@@ -17,8 +17,8 @@
             </router-link>
           <li>
             <a href="/" class="recommend-entry">
-              <img src="../../static/test/47365_main.jpg" class="recommend-img" />
-              <p class="recommend-title">記事タイトル</p>
+              <img src="../../static/test/info/ky.png" class="recommend-img" />
+              <p class="recommend-title">kyashに対応しました</p>
             </a>
           </li>
         </ul>
@@ -29,32 +29,20 @@
         <ul class="carousel">
           <li>
             <router-link to="/info/recommend/recommend20200527" class="recommend-entry">
-              <img src="../../static/test/47365_main.jpg" class="recommend-img" />
-              <p class="recommend-title">マツコデラックス機能追加</p>
+              <img src="../../static/test/info/hanage.jpg" class="recommend-img" />
+              <p class="recommend-title">鼻毛の伸び具合を通知</p>
             </router-link>
           </li>
           <li>
             <a href="/" class="recommend-entry">
-              <img src="../../static/test/47365_main.jpg" class="recommend-img" />
-              <p class="recommend-title">記事タイトル</p>
+              <img src="../../static/test/info/line.png" class="recommend-img" />
+              <p class="recommend-title">LINEはじめよう！</p>
             </a>
           </li>
           <li>
             <a href="/" class="recommend-entry">
-              <img src="../../static/test/47365_main.jpg" class="recommend-img" />
-              <p class="recommend-title">記事タイトル</p>
-            </a>
-          </li>
-          <li>
-            <a href="/" class="recommend-entry">
-              <img src="../../static/test/47365_main.jpg" class="recommend-img" />
-              <p class="recommend-title">記事タイトル</p>
-            </a>
-          </li>
-          <li>
-            <a href="/" class="recommend-entry">
-              <img src="../../static/test/47365_main.jpg" class="recommend-img" />
-              <p class="recommend-title">記事タイトル</p>
+              <img src="../../static/test/info/buta.jpg" class="recommend-img" />
+              <p class="recommend-title">課金戒めアプリ登場</p>
             </a>
           </li>
         </ul>
@@ -65,32 +53,26 @@
         <ul class="carousel">
           <li>
             <router-link to="/info/campaign/campaign20200527" class="recommend-entry">
-              <img src="../../static/test/47365_main.jpg" class="recommend-img" />
-              <p class="recommend-title">マツコデラックス機能追加</p>
+              <img src="../../static/test/pr/gekiatsu.jpg" class="recommend-img" />
+              <p class="recommend-title">激熱キャンペーン</p>
             </router-link>
           </li>
           <li>
             <a href="/" class="recommend-entry">
-              <img src="../../static/test/47365_main.jpg" class="recommend-img" />
-              <p class="recommend-title">記事タイトル</p>
+              <img src="../../static/test/info/pay_kv.png" class="recommend-img" />
+              <p class="recommend-title">はじめよう d払い！</p>
             </a>
           </li>
           <li>
             <a href="/" class="recommend-entry">
-              <img src="../../static/test/47365_main.jpg" class="recommend-img" />
-              <p class="recommend-title">記事タイトル</p>
+              <img src="../../static/test/info/Bitcoin-Gold-1.jpg" class="recommend-img" />
+              <p class="recommend-title">暗号資産投資のいろは</p>
             </a>
           </li>
           <li>
             <a href="/" class="recommend-entry">
-              <img src="../../static/test/47365_main.jpg" class="recommend-img" />
-              <p class="recommend-title">記事タイトル</p>
-            </a>
-          </li>
-          <li>
-            <a href="/" class="recommend-entry">
-              <img src="../../static/test/47365_main.jpg" class="recommend-img" />
-              <p class="recommend-title">記事タイトル</p>
+              <img src="../../static/test/info/kowai.jpg" class="recommend-img" />
+              <p class="recommend-title">怖い話フェア</p>
             </a>
           </li>
         </ul>
@@ -101,32 +83,14 @@
         <ul class="carousel">
           <li>
             <router-link to="/info/maintenance/maintenance20200527" class="recommend-entry">
-              <img src="../../static/test/47365_main.jpg" class="recommend-img" />
-              <p class="recommend-title">マツコデラックス機能追加</p>
+              <img src="../../static/test/info/maintenance.png" class="recommend-img" />
+              <p class="recommend-title">寝不足を解決しました</p>
             </router-link>
           </li>
           <li>
             <a href="/" class="recommend-entry">
-              <img src="../../static/test/47365_main.jpg" class="recommend-img" />
-              <p class="recommend-title">記事タイトル</p>
-            </a>
-          </li>
-          <li>
-            <a href="/" class="recommend-entry">
-              <img src="../../static/test/47365_main.jpg" class="recommend-img" />
-              <p class="recommend-title">記事タイトル</p>
-            </a>
-          </li>
-          <li>
-            <a href="/" class="recommend-entry">
-              <img src="../../static/test/47365_main.jpg" class="recommend-img" />
-              <p class="recommend-title">記事タイトル</p>
-            </a>
-          </li>
-          <li>
-            <a href="/" class="recommend-entry">
-              <img src="../../static/test/47365_main.jpg" class="recommend-img" />
-              <p class="recommend-title">記事タイトル</p>
+              <img src="../../static/test/info/maintenance.png" class="recommend-img" />
+              <p class="recommend-title">サーバーメンテナンス完了</p>
             </a>
           </li>
         </ul>

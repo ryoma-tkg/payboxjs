@@ -20,7 +20,7 @@
             <li v-for="storelists in storelist" v-bind:key='storelists.name'>
               <ul class="kekka">
                 <!--お店の画像を入れる-->
-                <li><img src="../../static/test/47365_main.jpg" alt="お店の画像"></li>
+                <li><img src="../../static/test/search/con.jpg" alt="お店の画像"></li>
                 <div class="nakami">
                   <li>
                     <h3>{{ storelists.name }}</h3>
@@ -51,18 +51,18 @@
                 <li>
                   <!--liが増えると項目が増えます。-->
                   <div class="recommend-entry">
-                    <button @click="eating"><img src="../../static/test/47365_main.jpg" class="recommend-img" /></button>
+                    <button @click="eating"><img src="../../static/test/category/syokuji.png" class="recommend-img" /></button>
                     <p class="recommend-title">食事</p>
                   </div>
                 <li>
                   <div class="recommend-entry">
-                    <button @click="fassion"><img src="../../static/test/47365_main.jpg" class="recommend-img" /></button>
+                    <button @click="fassion"><img src="../../static/test/category/fa.jpg" class="recommend-img" /></button>
                     <p class="recommend-title">ファッション</p>
                   </div>
                 </li>
                 <li>
                   <div class="recommend-entry">
-                    <button @click="convenienceStore"><img src="../../static/test/47365_main.jpg" class="recommend-img" /></button>
+                    <button @click="convenienceStore"><img src="../../static/test/category/konbini.jpg" class="recommend-img" /></button>
                     <p class="recommend-title">コンビニ</p>
                   </div>
                 </li>
@@ -463,6 +463,12 @@ h4 {
   bottom: 65px;
   left: 15%;
   font-weight: 900;
+}
+
+p.recommend-title{
+  text-shadow:
+    black 1px 1px 4px, black -1px 1px 4px,
+    black 1px -1px 4px;
 }
 
 /*
