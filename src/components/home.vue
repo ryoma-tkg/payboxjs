@@ -123,8 +123,8 @@ export default {
           tmp['imgPathBig'] = '../../static/test/home_kessai/card.svg'
           tmp['imgPathSmall'] = '../../static/test/kessai/card.svg'
         } else if (tmp['name'] === 'PayPay(現金チャージ)') {
-          tmp['imgPathBig'] = '../../static/test/home_kessai/paypay.svg'
-          tmp['imgPathSmall'] = '../../static/test/kessai/paypay.svg'
+          tmp['imgPathBig'] = './static/test/home_kessai/paypay.svg'
+          tmp['imgPathSmall'] = './static/test/kessai/paypay.svg'
         } else if (tmp['name'] === 'visa LINE Payカード') {
           tmp['imgPathBig'] = '../../static/test/home_kessai/visa_line.svg'
           tmp['imgPathSmall'] = '../../static/test/kessai/visa_line.svg'
