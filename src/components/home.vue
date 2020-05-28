@@ -23,7 +23,7 @@
       <p>クイック起動</p>
       <ul>
         <li v-for="sparr in sortPayAndReturnRate" v-bind:key="sparr.name">
-          <button class="clear_button">
+          <button class="clear_button" v-bind:href="sparr.link">
           {{sparr.name}}
           <img :src="sparr.imgPathSmall"/>
           {{sparr.rate}}
