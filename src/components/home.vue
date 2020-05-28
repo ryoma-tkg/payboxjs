@@ -1,7 +1,16 @@
 <template>
   <div>
     <div>
-
+      {{sortPayAndReturnRate[0].name}}
+      {{sortPayAndReturnRate[0].rate}}
+    </div>
+    <div>
+      <ul>
+        <li v-for="sparr in sortPayAndReturnRate.slice(1)" v-bind:key="sparr.name">
+          {{sparr.name}}
+          {{sparr.rate}}
+        </li>
+      </ul>
     </div>
     <p>他の決済手段</p>
     <p>お知らせキャンペーン</p>
@@ -16,15 +25,16 @@ moment.locale('ja')
 export default {
   data () {
     return {
-      bestPayName: '',
-      list: []
+      bestPayKey: '',
+      bestPayReturnRate: 0,
+      sortPayAndReturnRate: Array(JSON.parse('{"name": "' + 'お店に入るとお得な決済方法を表示します' + '", ' + '"rate": ' + 0 + '}'))
     }
   },
   created () {},
   mounted () {
-    axios.get('/static/campaign.json').then((response) => {
-      console.log(response)
-    })
+    // axios.get('/payboxjs/static/campaign.json').then((response) => {
+    //   console.log(response)
+    // })
 
     this.getPosition()
       .then((position) => {
@@ -56,6 +66,32 @@ export default {
         r = 1
       }
       return r
+    },
+    // Payソート用比較関数
+    comparePay: function (a, b) {
+      let r = 0
+      if (a['rate'] > b['rate']) {
+        r = -1
+      } else {
+        // if ( a['rate'] < b['rate'] )
+        r = 1
+      }
+      return r
+    },
+    // 一覧から一番お得なPayを返す
+    bestPay: function (pays) {
+      let bestPay = ''
+      let firstLoop = true
+      for (let payKey in pays) {
+        if (firstLoop) {
+          bestPay = payKey
+          firstLoop = false
+        }
+        if (pays[payKey] > pays[bestPay]) {
+          bestPay = payKey
+        }
+      }
+      return bestPay
     },
     getStoreRequest: async function (latitude, longitude) {
       try {
@@ -128,7 +164,18 @@ export default {
             }
           }
 
-          console.log('paypay', usePayAndReturnRate)
+          // sort Pay
+          this.sortPayAndReturnRate = Array(usePayAndReturnRate.length)
+          let i = 0
+          for (let uparrKey in usePayAndReturnRate) {
+            this.sortPayAndReturnRate[i] = JSON.parse('{"name": "' + uparrKey + '", ' + '"rate": ' + String(usePayAndReturnRate[uparrKey]) + '}')
+            ++i
+          }
+          this.sortPayAndReturnRate.sort(this.comparePay)
+          console.log('sortPayAndReturnRate', this.sortPayAndReturnRate)
+          this.bestPayKey = this.bestPay(usePayAndReturnRate)
+          this.bestPayReturnRate = usePayAndReturnRate[this.bestPayKey]
+          console.log('bestPayKey', this.bestPayKey, ': ', this.bestPayReturnRate)
         })
       } catch (error) {
         console.log('例外をキャッチしたよ！')

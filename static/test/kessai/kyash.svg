@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="210" height="210" viewBox="0 0 210 210">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: red;
+        font-size: 51px;
+        font-family: HiraKakuProN-W6, Hiragino Kaku Gothic ProN;
+      }
+
+      .cls-2, .cls-4 {
+        fill: none;
+      }
+
+      .cls-2 {
+        stroke: #505050;
+        stroke-miterlimit: 10;
+        stroke-width: 8px;
+      }
+
+      .cls-3 {
+        stroke: none;
+      }
+    </style>
+  </defs>
+  <g id="グループ_397" data-name="グループ 397" transform="translate(-943 -83)">
+    <text id="kyash" class="cls-1" transform="translate(967 205)"><tspan x="0" y="0">kyash</tspan></text>
+    <g id="楕円形_65" data-name="楕円形 65" class="cls-2" transform="translate(943 83)">
+      <circle class="cls-3" cx="105" cy="105" r="105"/>
+      <circle class="cls-4" cx="105" cy="105" r="101"/>
+    </g>
+  </g>
+</svg>
