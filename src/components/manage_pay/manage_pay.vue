@@ -551,7 +551,11 @@ export default {
   -webkit-box-shadow: 0px 5px 20px 0px rgba(0, 0, 0, 0.2);
   -moz-box-shadow: 0px 5px 20px 0px rgba(0, 0, 0, 0.2);
   box-shadow: 0px 5px 20px 0px rgba(0, 0, 0, 0.2);
+}
 
+.touroku:active{
+  color: #FFF;
+  background:#41A541;
 }
 
 @media screen and (min-width:319px) {
