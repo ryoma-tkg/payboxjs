@@ -168,12 +168,12 @@ export default {
       paypayMoney: false,
       visaLinePay: false,
       linePay: false,
-      lineRank: '',
+      lineRank: 'レギュラー',
       rakutenPay: false,
       rakutenPayCredit: '1%',
       auPay: false,
       auPayCredit: '1%',
-      isAu: '',
+      isAu: 'au以外のユーザー',
       dPay: false,
       dPayCredit: '1%',
       meruPay: false,
@@ -182,6 +182,9 @@ export default {
       // value
       usePayAndReturnRate: JSON.parse('{}')
     }
+  },
+  created () {
+    this.loadData()
   },
   methods: {
     saveData: function () {
@@ -207,23 +210,25 @@ export default {
     },
     loadData: function () {
       let save = this.$localStorage.get('save')
-      save = JSON.parse(save)
-      this.creditcard = save['creditcard']
-      this.creditcardCredit = save['creditcardCredit']
-      this.paypayMoney = save['paypayMoney']
-      this.visaLinePay = save['visaLinePay']
-      this.linePay = save['linePay']
-      this.lineRank = save['lineRank']
-      this.rakutenPay = save['rakutenPay']
-      this.rakutenPayCredit = save['rakutenPayCredit']
-      this.auPay = save['auPay']
-      this.auPayCredit = save['auPayCredit']
-      this.isAu = save['isAu']
-      this.dPay = save['dPay']
-      this.dPayCredit = save['dPayCredit']
-      this.meruPay = save['meruPay']
-      this.kyash = save['kyash']
-      this.kyash_credit = save['kyash_credit']
+      if (save !== null) {
+        save = JSON.parse(save)
+        this.creditcard = save['creditcard']
+        this.creditcardCredit = save['creditcardCredit']
+        this.paypayMoney = save['paypayMoney']
+        this.visaLinePay = save['visaLinePay']
+        this.linePay = save['linePay']
+        this.lineRank = save['lineRank']
+        this.rakutenPay = save['rakutenPay']
+        this.rakutenPayCredit = save['rakutenPayCredit']
+        this.auPay = save['auPay']
+        this.auPayCredit = save['auPayCredit']
+        this.isAu = save['isAu']
+        this.dPay = save['dPay']
+        this.dPayCredit = save['dPayCredit']
+        this.meruPay = save['meruPay']
+        this.kyash = save['kyash']
+        this.kyash_credit = save['kyash_credit']
+      }
     },
     register: function () {
       // 初期化
@@ -338,6 +343,9 @@ export default {
       console.log(this.usePayAndReturnRate)
       this.$localStorage.set('usePayAndReturnRate', JSON.stringify(this.usePayAndReturnRate))
       this.saveData()
+
+      // ホームへ移動
+      this.$router.push('/')
     }
   }
 }

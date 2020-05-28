@@ -22,22 +22,41 @@
 </template>
 
 <script>
-import isMobile from 'ismobilejs'
-
 export default {
   name: 'App',
   beforeCreate () {
-    console.log('is not pc', isMobile.any)
-    if (!isMobile.any) {
-      // スマホ or タブレットのでないときの処理
+    let userAgent = window.navigator.userAgent.toLowerCase()
+    if (userAgent.indexOf('iphone') !== -1) {
+      console.log('iPhoneをお使いですね')
+    } else if (userAgent.indexOf('ipad') !== -1) {
+      console.log('iPadをお使いですね')
+    } else if (userAgent.indexOf('android') !== -1) {
+      if (userAgent.indexOf('mobile') !== -1) {
+        console.log('androidのスマホをお使いですね')
+      } else {
+        console.log('androidのタブレットをお使いですね')
+      }
+    } else {
+      console.log('PCをお使いですね')
       if (!location.href.match(/pr/)) {
         this.$router.push('/pr')
       }
     }
   },
   beforeUpdate () {
-    if (!isMobile.any) {
-      // スマホ or タブレットのでないときの処理
+    let userAgent = window.navigator.userAgent.toLowerCase()
+    if (userAgent.indexOf('iphone') !== -1) {
+      console.log('iPhoneをお使いですね')
+    } else if (userAgent.indexOf('ipad') !== -1) {
+      console.log('iPadをお使いですね')
+    } else if (userAgent.indexOf('android') !== -1) {
+      if (userAgent.indexOf('mobile') !== -1) {
+        console.log('androidのスマホをお使いですね')
+      } else {
+        console.log('androidのタブレットをお使いですね')
+      }
+    } else {
+      console.log('PCをお使いですね')
       if (!location.href.match(/pr/)) {
         this.$router.push('/pr')
       }
