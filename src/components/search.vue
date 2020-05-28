@@ -196,12 +196,15 @@ export default {
     },
     eating: function () {
       this.keyword = '食事'
+      this.getPosition()
     },
     fassion: function () {
       this.keyword = 'ファッション'
+      this.getPosition()
     },
     convenienceStore: function () {
       this.keyword = 'コンビニ'
+      this.getPosition()
     }
   }
 }
