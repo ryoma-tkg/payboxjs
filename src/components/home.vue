@@ -139,7 +139,7 @@ export default {
         if (tmp['name'] === 'クレジットカード') {
           tmp['imgPathBig'] = './static/test/home_kessai/card.svg'
           tmp['imgPathSmall'] = './static/test/kessai/card.svg'
-          tmp['link'] = ''
+          tmp['link'] = 'javascript:void(0)'
           tmp['label'] = 'クレジットカードで支払ってください'
         } else if (tmp['name'] === 'PayPay(現金チャージ)') {
           tmp['imgPathBig'] = './static/test/home_kessai/paypay.svg'
@@ -149,7 +149,7 @@ export default {
         } else if (tmp['name'] === 'visa LINE Payカード') {
           tmp['imgPathBig'] = './static/test/home_kessai/visa_line.svg'
           tmp['imgPathSmall'] = './static/test/kessai/visa_line.svg'
-          tmp['link'] = ''
+          tmp['link'] = 'javascript:void(0)'
           tmp['label'] = 'visa LINE Payカードで支払ってください'
         } else if (tmp['name'] === 'LINE Pay') {
           tmp['imgPathBig'] = './static/test/home_kessai/line.svg'
@@ -179,7 +179,7 @@ export default {
         } else if (tmp['name'] === 'Kyash Card') {
           tmp['imgPathBig'] = './static/test/home_kessai/kyash.svg'
           tmp['imgPathSmall'] = './static/test/kessai/kyash.svg'
-          tmp['link'] = ''
+          tmp['link'] = 'javascript:void(0)'
           tmp['label'] = 'Kyash Cardで支払ってください'
         }
 
@@ -284,6 +284,7 @@ export default {
   }
 }
 </script>
+
 <style scoped>
 *{
   margin: 0;
