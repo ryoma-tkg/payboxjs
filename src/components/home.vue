@@ -16,9 +16,9 @@
       <ul v-if="show">
         <li v-for="sparr in sortPayAndReturnRate.slice(1)" v-bind:key="sparr.name">
             <ul class="hi_naka">
-                <li class="kikanbo"><a class="clear_button"><img :src="sparr.imgPathSmall"/></a></li>
-                <li><a class="clear_button"><p><span>{{sparr.name}}</span></p></a></li>
-                <li><a class="clear_button"><p>還元率<br><span>{{sparr.rate}}</span>％</p></a></li>
+                <li class="kikanbo"><a class="clear_button" v-bind:href="sparr.link"><img :src="sparr.imgPathSmall"/></a></li>
+                <li><a class="clear_button" v-bind:href="sparr.link"><p><span>{{sparr.name}}</span></p></a></li>
+                <li><a class="clear_button" v-bind:href="sparr.link"><p>還元率<br><span>{{sparr.rate}}</span>％</p></a></li>
             </ul>
         </li>
       </ul>
@@ -84,14 +84,10 @@ export default {
   methods: {
     nonSaveData: function () {
       console.log('this.$localStorage: ', this.$localStorage)
-      if (this.$localStorage === undefined) {
+      let save = this.$localStorage.get('save')
+      console.log('save: ', save)
+      if (save === null) {
         this.$router.push('/manage_pay')
-      } else {
-        let save = this.$localStorage.get('save')
-        console.log('save: ', save)
-        if (save === null) {
-          this.$router.push('/manage_pay')
-        }
       }
     },
     pulldown: function () {
