@@ -333,6 +333,10 @@ export default {
   padding: 0;
 }
 
+a{
+  text-decoration: none;
+}
+
 .clearfix::after {
    content: "";
   display: block;
@@ -556,6 +560,8 @@ ul.hi_naka{
   box-sizing:border-box;
 }
 
+.hi_naka a:link { color: #505050;}
+
 .hi_naka li:nth-child(2){
   width: 60%;
   float: left;
@@ -563,6 +569,7 @@ ul.hi_naka{
   height: 65px;
   padding: 20px 0 0 0;
   box-sizing:border-box;
+  color:#505050;
 }
 
 .hi_naka li:nth-child(3){
@@ -571,6 +578,7 @@ ul.hi_naka{
   height: 65px;
   padding: 5px 0 0 0;
   box-sizing:border-box;
+  color:#505050;
 }
 
 .hi_naka  li a img{
@@ -583,6 +591,7 @@ ul.hi_naka{
 .hikaku a.clear_button ul li img{
   width: 70px;
   border:none;
+  color:#505050;
 }
 
 .lines{
