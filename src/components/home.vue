@@ -16,13 +16,13 @@ moment.locale('ja')
 export default {
   data () {
     return {
-      bestPayName: '',
-      list: []
+      bestPayKey: '',
+      bestPayReturnRate: 0
     }
   },
   created () {},
   mounted () {
-    axios.get('/static/campaign.json').then((response) => {
+    axios.get('/payboxjs/static/campaign.json').then((response) => {
       console.log(response)
     })
 
@@ -56,6 +56,21 @@ export default {
         r = 1
       }
       return r
+    },
+    // 一覧から一番お得なPayを返す
+    bestPay: function (pays) {
+      let bestPay = ''
+      let firstLoop = true
+      for (let payKey in pays) {
+        if (firstLoop) {
+          bestPay = payKey
+          firstLoop = false
+        }
+        if (pays[payKey] > pays[bestPay]) {
+          bestPay = payKey
+        }
+      }
+      return bestPay
     },
     getStoreRequest: async function (latitude, longitude) {
       try {
@@ -128,7 +143,10 @@ export default {
             }
           }
 
-          console.log('paypay', usePayAndReturnRate)
+          // 一番お得なPay
+          this.bestPayKey = this.bestPay(usePayAndReturnRate)
+          this.bestPayReturnRate = usePayAndReturnRate[this.bestPayKey]
+          console.log('bestPayKey', this.bestPayKey, ': ', this.bestPayReturnRate)
         })
       } catch (error) {
         console.log('例外をキャッチしたよ！')
