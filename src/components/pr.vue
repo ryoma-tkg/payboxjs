@@ -36,7 +36,7 @@
           </p>
         </li>
       </ul>
-
+      <!--
       <ul class="pays">
         <li><img src="../../static/test/kessai/au.svg" alt=""></li>
         <li><img src="../../static/test/kessai/d.svg" alt=""></li>
@@ -47,7 +47,7 @@
         <li><img src="../../static/test/kessai/mel.svg" alt=""></li>
         <li><img src="../../static/test/kessai/quo.svg" alt=""></li>
         <li><img src="../../static/test/kessai//ic.svg" alt=""></li>
-      </ul>
+      </ul>-->
     </section>
     </div>
   </div>
@@ -151,10 +151,17 @@ export default {
 }
 </script>
 
-<style scoped>
+<style>
+</style>
+
+<style scoed>
 *{
   margin:0;
   padding:0;
+}
+
+#footer{
+  display: none;
 }
 
 .wrapper {
@@ -188,7 +195,7 @@ _::-webkit-full-page-media, _:future, :root .header {
 
 .article{
   width: 100%;
-  height: 100vh;
+  height: 50vh;
   background:#FFF;
 }
 
@@ -402,7 +409,7 @@ section .pays li{
 
       .article{
         margin-top:300px;
-        height: 100vh;
+        height: 50vh;
       }
 
       .article h2{
