@@ -17,16 +17,16 @@
           <ul>
             <li>
             </li>
-            <li v-for="store in filteredStores" v-bind:key='store'>
+            <li v-for="storelists in storelist" v-bind:key='storelists.name'>
               <ul class="kekka">
                 <!--お店の画像を入れる-->
                 <li><img src="../../static/test/47365_main.jpg" alt="お店の画像"></li>
                 <div class="nakami">
                   <li>
-                    <h3>{{ store.storeName }}</h3>
+                    <h3>{{ storelists.name }}</h3>
                   </li>
                   <li>
-                    <h4>{{ store.storeCategory }}</h4>
+                    <h4>{{ storelists.category_name }}</h4>
                   </li>
                   <!-- 決済アイコンの表示 -->
                   <li><img src="../../static/test/kessai/au.svg" alt="決済アイコン"></li>
@@ -118,58 +118,68 @@ function compare (a, b) {
   return r
 }
 
-// 検索用
-async function searchStores (latitude, longitude) {
-  try {
-    let range = 10.011111
-    let url = 'https://ykrytk.ddo.jp/api/shops?latitude=' + String(latitude) + '&longitude=' + String(longitude) + '&range=' + String(range)
-    console.log('REST url: ', url)
-
-    // (1) http://localhost:4000/comments (コメント一覧のWeb API)にGETリクエストして、コメント一覧のレスポンスを取得しましょう (Fetch APIを使います)
-    const response = await fetch(url)
-    if (!response.ok) {
-      console.error('エラーレスポンス', response)
-      return
-    }
-
-    // (2) レスポンスのボディを取得して、変数に代入しましょう (ボディはJSON形式です)
-    let stores = await response.json()
-    stores = stores['data']
-    // console.log('stores: ', stores)
-
-    // 現在位置から店までの距離取得
-    for (let key in stores) {
-      stores[key]['distance'] = Math.pow(Number(stores[key]['latitude']) - latitude, 2) + Math.pow(Number(stores[key]['longitude']) - longitude, 2)
-    }
-
-    // 近い店順に並び替え
-    stores.sort(compare)
-    console.log('stores: ', stores)
-  } catch (error) {
-    console.log('例外をキャッチしたよ！')
-    console.error(error)
-  }
-}
-
 export default {
   data () {
     return {
-      keyword: ''
-    }
-  },
-  computed: {
-    filteredStores: function () {
-      let stores = []
-      for (var i in this.stores) {
-        let store = this.stores[i]
-        if ((store.name.indexOf(this.keyword) !== -1 || store.category_name.indexOf(this.keyword) !== -1) && this.keyword !== '') {
-          stores.push(store)
-        }
-      }
-      return stores
+      keyword: '',
+      storelist: []
     }
   },
   methods: {
+    getStoreList: function () {
+      console.log(this.storelist)
+      return this.storelist
+    },
+    filteredStores: function (stores) {
+      this.storelist = []
+      // console.log(stores)
+      for (var i in stores) {
+        var store = stores[i]
+        // console.log(store)
+        if ((store.name.indexOf(this.keyword) !== -1 || store.category_name.indexOf(this.keyword) !== -1) && this.keyword !== '') {
+          this.storelist.push(store)
+          // console.log(storelist)
+        }
+      }
+      console.log(this.storelist)
+    },
+    // 検索用
+    searchStores: async function (latitude, longitude) {
+      try {
+        let range = 10.011111
+        let url = 'https://ykrytk.ddo.jp/api/shops?latitude=' + String(latitude) + '&longitude=' + String(longitude) + '&range=' + String(range)
+        console.log('REST url: ', url)
+
+        // (1) http://localhost:4000/comments (コメント一覧のWeb API)にGETリクエストして、コメント一覧のレスポンスを取得しましょう (Fetch APIを使います)
+        const response = await fetch(url)
+        if (!response.ok) {
+          console.error('エラーレスポンス', response)
+          return
+        }
+
+        // (2) レスポンスのボディを取得して、変数に代入しましょう (ボディはJSON形式です)
+        let stores = await response.json()
+        stores = stores['data']
+        // console.log('stores: ', stores)
+
+        // 現在位置から店までの距離取得
+        for (let key in stores) {
+          stores[key]['distance'] = Math.pow(Number(stores[key]['latitude']) - latitude, 2) + Math.pow(Number(stores[key]['longitude']) - longitude, 2)
+        }
+
+        // 近い店順に並び替え
+        stores.sort(compare)
+        console.log('stores: ', stores)
+
+        var storelist = []
+        storelist = this.filteredStores(stores)
+        console.log('searchstorelist' + storelist)
+        return storelist
+      } catch (error) {
+        console.log('例外をキャッチしたよ！')
+        console.error(error)
+      }
+    },
     // GPS 取得
     getPosition: function () {
       return new Promise(function (resolve) {
@@ -182,7 +192,10 @@ export default {
           let longitude = position.coords.longitude
           console.log(latitude, ', ', longitude)
           // nearStoresList(latitude, longitude)
-          searchStores(latitude, longitude)
+          var storelist = []
+          storelist = this.searchStores(latitude, longitude)
+          console.log(storelist)
+          return storelist
         })
         .catch((err) => {
           console.error(err.message)
@@ -198,7 +211,7 @@ export default {
       this.keyword = 'ファッション'
     },
     convenienceStore: function () {
-      this.keyword = 'コンビニエンスストア'
+      this.keyword = 'コンビニ'
     }
   }
 }
