@@ -6,16 +6,15 @@
       </div>
     </div>
     <div class="top_speas_s"></div>
-    <div class="user_info">
+    <!--<div class="user_info">
       <img src="../../static/test/47365_main.jpg" alt="プロフィール写真" id="user_image">
-      <!--仮で画像を入れています、処理を変えてください。-->
       <p class="user_name">{{ LogInInfo }}</p>
-    </div>
+    </div>-->
     <ul class="setting">
-      <router-link to="/setting/acountInfo">
+      <!--<router-link to="/setting/acountInfo">
         <li id="acount_info"><button>アカウント情報</button></li>
-      </router-link>
-      <router-link to="/setting/payManager">
+      </router-link>-->
+      <router-link to="/manage_pay">
         <li id="pay_manager"><button>支払い管理</button></li>
       </router-link>
       <router-link to="/setting/notice">
@@ -39,7 +38,7 @@
         <li id="query"><button>問い合わせ</button></li>
       </router-link>
     </ul>
-    <div id="log_out"><button @click="Logout">ログアウト</button></div>
+    <div id="log_out"><!--<button @click="Logout">ログアウト</button>--></div>
     <div class="spacing"></div>
   </div>
 </template>
