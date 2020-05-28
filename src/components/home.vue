@@ -34,11 +34,11 @@
       <p>クイック起動</p>
       <ul>
         <li v-for="sparr in sortPayAndReturnRate" v-bind:key="sparr.name">
-          <button class="clear_button" v-bind:href="sparr.link">
+          <a class="clear_button" v-bind:href="sparr.link">
           {{sparr.name}}
           <img :src="sparr.imgPathSmall"/>
           {{sparr.rate}}
-          </button>
+          </a>
         </li>
       </ul>
     </div>
@@ -168,7 +168,7 @@ export default {
         } else if (tmp['name'] === 'メルペイ') {
           tmp['imgPathBig'] = './static/test/home_kessai/mel.svg'
           tmp['imgPathSmall'] = './static/test/kessai/mel.svg'
-          tmp['link'] = 'mercari://'
+          tmp['link'] = 'https://mercari.jp/app/launch'
           tmp['label'] = 'アプリを開く'
         } else if (tmp['name'] === 'Kyash Card') {
           tmp['imgPathBig'] = './static/test/home_kessai/kyash.svg'
