@@ -239,7 +239,7 @@ export default {
           this.sortPayAndReturnRate = Array(usePayAndReturnRate.length)
           let i = 0
           for (let uparrKey in usePayAndReturnRate) {
-            //this.sortPayAndReturnRate[i] = JSON.parse('{"name": "' + uparrKey + '", ' + '"rate": ' + String(usePayAndReturnRate[uparrKey]) + '}')
+            // this.sortPayAndReturnRate[i] = JSON.parse('{"name": "' + uparrKey + '", ' + '"rate": ' + String(usePayAndReturnRate[uparrKey]) + '}')
             this.sortPayAndReturnRate[i] = usePayAndReturnRate[uparrKey]
             ++i
           }
