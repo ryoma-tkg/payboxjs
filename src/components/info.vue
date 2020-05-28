@@ -21,24 +21,6 @@
               <p class="recommend-title">記事タイトル</p>
             </a>
           </li>
-          <li>
-            <a href="/" class="recommend-entry">
-              <img src="../../static/test/47365_main.jpg" class="recommend-img" />
-              <p class="recommend-title">記事タイトル</p>
-            </a>
-          </li>
-          <li>
-            <a href="/" class="recommend-entry">
-              <img src="../../static/test/47365_main.jpg" class="recommend-img" />
-              <p class="recommend-title">記事タイトル</p>
-            </a>
-          </li>
-          <li>
-            <a href="/" class="recommend-entry">
-              <img src="../../static/test/47365_main.jpg" class="recommend-img" />
-              <p class="recommend-title">記事タイトル</p>
-            </a>
-          </li>
         </ul>
       </div>
       <h2>おすすめアプリ</h2>
@@ -151,15 +133,26 @@
       </div>
     </div>
     <div class="top_speas"></div>
+    <div class="top_speas"></div>
   </div>
 </template>
 
 <script>
+
 </script>
 
 <style scoped>
+*{
+  overflow-y: scroll;
+}
+
+::-webkit-scrollbar {
+      display: none;
+      -webkit-appearance: none;
+}
+
 .top_speas {
-  margin-top: 120px
+  margin-top: 50px
 }
 
 .title {

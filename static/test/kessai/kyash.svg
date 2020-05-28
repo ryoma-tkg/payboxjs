@@ -1,32 +1,20 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="210" height="210" viewBox="0 0 210 210">
+<svg xmlns="http://www.w3.org/2000/svg" width="333.106" height="332.758" viewBox="0 0 333.106 332.758">
   <defs>
     <style>
       .cls-1 {
-        fill: red;
-        font-size: 51px;
-        font-family: HiraKakuProN-W6, Hiragino Kaku Gothic ProN;
-      }
-
-      .cls-2, .cls-4 {
-        fill: none;
+        fill: #fff;
       }
 
       .cls-2 {
-        stroke: #505050;
-        stroke-miterlimit: 10;
-        stroke-width: 8px;
-      }
-
-      .cls-3 {
-        stroke: none;
+        fill: #2ad1ff;
+        fill-rule: evenodd;
       }
     </style>
   </defs>
-  <g id="グループ_397" data-name="グループ 397" transform="translate(-943 -83)">
-    <text id="kyash" class="cls-1" transform="translate(967 205)"><tspan x="0" y="0">kyash</tspan></text>
-    <g id="楕円形_65" data-name="楕円形 65" class="cls-2" transform="translate(943 83)">
-      <circle class="cls-3" cx="105" cy="105" r="105"/>
-      <circle class="cls-4" cx="105" cy="105" r="101"/>
+  <g id="グループ_15" data-name="グループ 15" transform="translate(-3864.447 -4794.075)">
+    <g id="グループ_14" data-name="グループ 14">
+      <rect id="長方形_11" data-name="長方形 11" class="cls-1" width="200.817" height="200.817" transform="translate(3941.644 4855.776)"/>
+      <path id="パス_20" data-name="パス 20" class="cls-2" d="M4031,4794.075c-91.984,0-166.552,74.491-166.552,166.379s74.568,166.379,166.552,166.379,166.554-74.49,166.554-166.379S4122.985,4794.075,4031,4794.075Zm41.548,93.6A24.543,24.543,0,1,1,4048,4912.216,24.543,24.543,0,0,1,4072.547,4887.672Zm-51.81,143.968h-67.67V4888.9h67.67Zm103.08-6.5-8.706,6.5h-50.235l-34.041-45.574a10.794,10.794,0,0,1,2.182-15.061l32.33-24.148a10.8,10.8,0,0,1,15.061,2.181l45.591,61.04A10.794,10.794,0,0,1,4123.817,5025.139Z"/>
     </g>
   </g>
 </svg>
