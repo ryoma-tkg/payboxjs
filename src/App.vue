@@ -26,16 +26,17 @@ import isMobile from 'ismobilejs'
 
 export default {
   name: 'App',
-  beforeCreated () {
-    if (!isMobile.isAny) {
+  beforeCreate () {
+    console.log('is not pc', isMobile.any)
+    if (!isMobile.any) {
       // スマホ or タブレットのでないときの処理
       if (!location.href.match(/pr/)) {
         this.$router.push('/pr')
       }
     }
   },
-  befoerUpdate () {
-    if (!isMobile.isAny) {
+  beforeUpdate () {
+    if (!isMobile.any) {
       // スマホ or タブレットのでないときの処理
       if (!location.href.match(/pr/)) {
         this.$router.push('/pr')
