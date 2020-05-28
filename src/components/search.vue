@@ -20,7 +20,7 @@
             <li v-for="storelists in storelist" v-bind:key='storelists.name'>
               <ul class="kekka">
                 <!--お店の画像を入れる-->
-                <li><img src="../../static/test/search/con1.jpg" alt="お店の画像"></li>
+                <li><img src="../../static/test/search/bini.jpg" alt="お店の画像"></li>
                 <div class="nakami">
                   <li>
                     <h3>{{ storelists.name }}</h3>
