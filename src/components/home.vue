@@ -16,9 +16,9 @@
       <ul>
         <li v-for="sparr in sortPayAndReturnRate.slice(1)" v-bind:key="sparr.name">
             <ul class="hi_naka">
-                <li><a class="clear_button"><img :src="sparr.imgPathSmall"/></a></li>
-                <li><a class="clear_button"><p>{{sparr.name}}</p></a></li>
-                <li><a class="clear_button"><p>{{sparr.rate}}</p></a></li>
+                <li class="kikanbo"><a class="clear_button"><img :src="sparr.imgPathSmall"/></a></li>
+                <li><a class="clear_button"><p><span>{{sparr.name}}</span></p></a></li>
+                <li><a class="clear_button"><p>還元率<br><span>{{sparr.rate}}</span>％</p></a></li>
             </ul>
         </li>
         <!--<li><div class="lines"></div></li>-->
@@ -432,13 +432,17 @@ export default {
 
 a.clear_button{
   display: block;
-  border:solid 1px #696969;
-  margin:20px 0 30px 0;
   width: 100%;
-  height: 70px;
+  height: 50px;
+  box-sizing:border-box;
+}
+
+.clear_button span{
+  font-weight: 700;
 }
 
 .hi_naka{
+  box-sizing:border-box;
 }
 
 .hi_naka ul li{
@@ -446,24 +450,46 @@ a.clear_button{
   list-style: none;
 }
 
+ul.hi_naka{
+  width: 100%;
+  height: 70px;
+  border-bottom: solid 1px #696969;
+}
+
+.hi_naka li{
+  display: block;
+  height: 50px;
+  margin-top: 10px;
+}
+
 .hi_naka li:nth-child(1){
   width: 20%;
+  height: 70px;
   float: left;
+  box-sizing:border-box;
 }
 
 .hi_naka li:nth-child(2){
   width: 60%;
   float: left;
   font-size:4.2vmin;
+  height: 65px;
+  padding: 20px 0 0 0;
+  box-sizing:border-box;
 }
 
 .hi_naka li:nth-child(3){
   width: 20%;
   float: left;
+  height: 65px;
+  padding: 5px 0 0 0;
+  box-sizing:border-box;
 }
 
 .hi_naka  li a img{
   width: 65px;
+  height: 65px;
+  object-fit: cover;
   border: none;
 }
 
