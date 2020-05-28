@@ -23,7 +23,7 @@
       <p>クイック起動</p>
       <ul>
         <li v-for="sparr in sortPayAndReturnRate" v-bind:key="sparr.name">
-          <button class="clear_button">
+          <button class="clear_button" v-bind:href="sparr.link">
           {{sparr.name}}
           <img :src="sparr.imgPathSmall"/>
           {{sparr.rate}}
@@ -120,32 +120,50 @@ export default {
 
         // add img path Big and Small
         if (tmp['name'] === 'クレジットカード') {
-          tmp['imgPathBig'] = '../../static/test/home_kessai/card.svg'
-          tmp['imgPathSmall'] = '../../static/test/kessai/card.svg'
+          tmp['imgPathBig'] = './static/test/home_kessai/card.svg'
+          tmp['imgPathSmall'] = './static/test/kessai/card.svg'
+          tmp['link'] = ''
+          tmp['label'] = 'クレジットカードで支払ってください'
         } else if (tmp['name'] === 'PayPay(現金チャージ)') {
           tmp['imgPathBig'] = './static/test/home_kessai/paypay.svg'
           tmp['imgPathSmall'] = './static/test/kessai/paypay.svg'
+          tmp['link'] = 'paypay://'
+          tmp['label'] = 'アプリを開く'
         } else if (tmp['name'] === 'visa LINE Payカード') {
-          tmp['imgPathBig'] = '../../static/test/home_kessai/visa_line.svg'
-          tmp['imgPathSmall'] = '../../static/test/kessai/visa_line.svg'
+          tmp['imgPathBig'] = './static/test/home_kessai/visa_line.svg'
+          tmp['imgPathSmall'] = './static/test/kessai/visa_line.svg'
+          tmp['link'] = ''
+          tmp['label'] = 'visa LINE Payカードで支払ってください'
         } else if (tmp['name'] === 'LINE Pay') {
-          tmp['imgPathBig'] = '../../static/test/home_kessai/line.svg'
-          tmp['imgPathSmall'] = '../../static/test/kessai/line.svg'
+          tmp['imgPathBig'] = './static/test/home_kessai/line.svg'
+          tmp['imgPathSmall'] = './static/test/kessai/line.svg'
+          tmp['link'] = 'line://pay/generateQR://'
+          tmp['label'] = 'アプリを開く'
         } else if (tmp['name'] === '楽天Pay') {
-          tmp['imgPathBig'] = '../../static/test/home_kessai/r.svg'
-          tmp['imgPathSmall'] = '../../static/test/kessai/r.svg'
+          tmp['imgPathBig'] = './static/test/home_kessai/r.svg'
+          tmp['imgPathSmall'] = './static/test/kessai/r.svg'
+          tmp['link'] = 'rakutenpay://'
+          tmp['label'] = 'アプリを開く'
         } else if (tmp['name'] === 'auPay') {
-          tmp['imgPathBig'] = '../../static/test/home_kessai/au.svg'
-          tmp['imgPathSmall'] = '../../static/test/kessai/au.svg'
+          tmp['imgPathBig'] = './static/test/home_kessai/au.svg'
+          tmp['imgPathSmall'] = './static/test/kessai/au.svg'
+          tmp['link'] = 'auwallet://'
+          tmp['label'] = 'アプリを開く'
         } else if (tmp['name'] === 'd払い') {
-          tmp['imgPathBig'] = '../../static/test/home_kessai/d.svg'
-          tmp['imgPathSmall'] = '../../static/test/kessai/d.svg'
+          tmp['imgPathBig'] = './static/test/home_kessai/d.svg'
+          tmp['imgPathSmall'] = './static/test/kessai/d.svg'
+          tmp['link'] = 'https://payment-urllink.smt.docomo.ne.jp'
+          tmp['label'] = 'アプリを開く'
         } else if (tmp['name'] === 'メルペイ') {
-          tmp['imgPathBig'] = '../../static/test/home_kessai/mel.svg'
-          tmp['imgPathSmall'] = '../../static/test/kessai/mel.svg'
+          tmp['imgPathBig'] = './static/test/home_kessai/mel.svg'
+          tmp['imgPathSmall'] = './static/test/kessai/mel.svg'
+          tmp['link'] = 'mercari://'
+          tmp['label'] = 'アプリを開く'
         } else if (tmp['name'] === 'Kyash Card') {
-          tmp['imgPathBig'] = '../../static/test/home_kessai/kyash.svg'
-          tmp['imgPathSmall'] = '../../static/test/kessai/kyash.svg'
+          tmp['imgPathBig'] = './static/test/home_kessai/kyash.svg'
+          tmp['imgPathSmall'] = './static/test/kessai/kyash.svg'
+          tmp['link'] = ''
+          tmp['label'] = 'Kyash Cardで支払ってください'
         }
 
         usePayAndReturnRate[uparr] = tmp
