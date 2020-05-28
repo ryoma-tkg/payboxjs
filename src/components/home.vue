@@ -86,11 +86,12 @@ export default {
       console.log('this.$localStorage: ', this.$localStorage)
       if (this.$localStorage === undefined) {
         this.$router.push('/manage_pay')
-      }
-      let save = this.$localStorage.get('save')
-      console.log('save: ', save)
-      if (save === null) {
-        this.$router.push('/manage_pay')
+      } else {
+        let save = this.$localStorage.get('save')
+        console.log('save: ', save)
+        if (save === null) {
+          this.$router.push('/manage_pay')
+        }
       }
     },
     pulldown: function () {
@@ -192,6 +193,11 @@ export default {
           tmp['imgPathSmall'] = './static/test/kessai/mel.svg'
           tmp['link'] = 'https://mercari.jp/app/launch'
           tmp['label'] = 'アプリを開く'
+          let userAgent = window.navigator.userAgent.toLowerCase()
+          if (userAgent.indexOf('iphone') !== -1) {
+            console.log('iPhoneをお使いですね')
+            tmp['link'] = 'mercari://'
+          }
         } else if (tmp['name'] === 'Kyash Card') {
           tmp['imgPathBig'] = './static/test/home_kessai/kyash.svg'
           tmp['imgPathSmall'] = './static/test/kessai/kyash.svg'
