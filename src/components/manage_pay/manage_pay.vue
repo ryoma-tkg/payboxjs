@@ -345,7 +345,8 @@ export default {
       this.saveData()
 
       // ホームへ移動
-      this.$router.push('/')
+      // this.$router.push('/')
+      this.$router.push('https://yosipy.github.io/payboxjs/#/')
     }
   }
 }
