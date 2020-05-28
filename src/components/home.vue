@@ -1,10 +1,12 @@
 <template>
   <div>
-    <div>
-      {{sortPayAndReturnRate[0].name}}
-      {{sortPayAndReturnRate[0].rate}}
-      <img :src="sortPayAndReturnRate[0].imgPathBig"/>
-      <button class="clear_button">ボタン</button>
+    <div class="osusume">
+      <div class="os_naka">
+        {{sortPayAndReturnRate[0].name}}
+        {{sortPayAndReturnRate[0].rate}}
+        <img :src="sortPayAndReturnRate[0].imgPathBig"/>
+        <button class="clear_button">ボタン</button>
+      </div>
     </div>
     <div>
       <ul>
@@ -253,5 +255,50 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
+*{
+  margin: 0;
+  padding: 0;
+}
+
+.osusume{
+  margin: -60px auto 10px auto;
+  padding:40px 0 20px 0;
+  width: 100%;
+  height: 230px;
+  background: red;
+
+  border-radius: 0 0 20px 20px;
+}
+
+.osusume img{
+  width: 70%;
+  max-height: 100px;
+}
+
+.osusume button{
+  margin: 20px auto 0 auto;
+  display: inline-block;
+  width: 60%;
+  height: 40px;
+  border-radius: 50px;
+  border: none;
+  background-color: #FFF;
+  padding-top: 10px;
+
+}
+
+.osusume button::after{
+  text-align: center;
+  width: 104%;
+  height: 48px;
+  content:"";
+  display: block;
+  position: relative;
+  bottom: 38px;
+  right: 8px;
+  border-radius: 50px;
+  border:solid 3px #FFF;
+}
+
 </style>

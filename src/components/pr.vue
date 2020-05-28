@@ -160,10 +160,6 @@ export default {
   padding:0;
 }
 
-#footer{
-  display: none;
-}
-
 .wrapper {
   margin-top:-60px;
   width: 100%;
