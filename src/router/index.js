@@ -143,5 +143,8 @@ export default new Router({
       name: 'recommend20200527',
       component: recommend20200527
     }
-  ]
+  ],
+  scrollBehavior (to, from, savedPosition) {
+    return { x: 0, y: 0 }
+  }
 })
