@@ -400,16 +400,6 @@ a{
       color: #C70027;
 }
 
-@media screen and (-webkit-min-device-pixel-ratio:0) {
-    _::-webkit-full-page-media, _:future, .osusume a.clear_button::after {
-      bottom: 33px;
-      right: 5px;
-    }
-    _::-webkit-full-page-media, _:future, .osusume a.clear_button{/*決済によって色が変わるよ*/
-      padding-top: 5px;
-    }
-}
-
 .osusume div.os_naka{
   position: relative;
   bottom: -10px;
